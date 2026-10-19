@@ -15,7 +15,7 @@ The jobs run independently after validation. One store can accept an update whil
 
 ## Configure the accounts once
 
-As of October 19, 2026, the Google project, service account, and restricted GitHub identity provider are created. The provider is active, its two GitHub variables are saved, and Google's billing API confirms `billingEnabled: false` with no billing account attached. Chrome's linked service account and listing IDs, plus Mozilla's two GitHub secrets, still require account setup. No store upload has been performed by this workflow.
+As of October 19, 2026, the Google project, service account, and restricted GitHub identity provider are created. The provider is active, all four Chrome/GCP repository variables are saved and read back, and the publisher has confirmed linking the service account in Chrome's dashboard. Google's billing API confirmed `billingEnabled: false` with no billing account attached. Mozilla's two GitHub secrets still require account setup, so the shared release workflow will stop before either upload until they are added. Live Chrome API authorization remains unverified: the local Google user cannot impersonate the publishing service account, whose federation access is granted to GitHub releases. No store upload has been performed by this workflow.
 
 ### Firefox secrets
 
@@ -65,10 +65,12 @@ Add these **repository variables** in [Typewell's Actions variables](https://git
 
 | Variable | Value to copy |
 | --- | --- |
-| `CWS_PUBLISHER_ID` | Publisher ID from Chrome's **Publisher → Settings** page |
-| `CWS_EXTENSION_ID` | Typewell's 32-letter Chrome extension ID |
-| `GCP_WORKLOAD_IDENTITY_PROVIDER` | Full provider resource name: `projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/providers/PROVIDER_ID` |
-| `GCP_SERVICE_ACCOUNT` | Publishing service-account email: `NAME@PROJECT_ID.iam.gserviceaccount.com` |
+| `CWS_PUBLISHER_ID` | `4f6fc093-c0cf-463d-8bb8-66594ad86ab2` |
+| `CWS_EXTENSION_ID` | `fbkhpcclcklddcfoanadpalnfelpngch` |
+| `GCP_WORKLOAD_IDENTITY_PROVIDER` | `projects/645044318350/locations/global/workloadIdentityPools/github/providers/typewell-release` |
+| `GCP_SERVICE_ACCOUNT` | `typewell-publisher@typewell-publishing-1425913806.iam.gserviceaccount.com` |
+
+Typewell's existing listing is managed in its [Chrome developer dashboard](https://chrome.google.com/webstore/devconsole/4f6fc093-c0cf-463d-8bb8-66594ad86ab2/fbkhpcclcklddcfoanadpalnfelpngch/edit).
 
 These identifiers are configuration, not access tokens. The workflow requests only the `https://www.googleapis.com/auth/chromewebstore` token scope. [Find the Chrome publisher ID](https://developer.chrome.com/docs/webstore/using-api#obtain_your_publisher_id)
 
