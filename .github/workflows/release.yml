@@ -19,7 +19,7 @@ jobs:
     with:
       release_tag: ${{ github.event.release.tag_name }}
 
-  configuration:
+  release_guard:
     needs: validate
     runs-on: ubuntu-24.04
     timeout-minutes: 5
@@ -30,23 +30,9 @@ jobs:
           persist-credentials: false
       - name: Require a release from main
         run: git merge-base --is-ancestor HEAD origin/main
-      - name: Require configuration for both stores before either upload
-        env:
-          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
-          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
-          CWS_PUBLISHER_ID: ${{ vars.CWS_PUBLISHER_ID }}
-          CWS_EXTENSION_ID: ${{ vars.CWS_EXTENSION_ID }}
-          GCP_WORKLOAD_IDENTITY_PROVIDER: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          GCP_SERVICE_ACCOUNT: ${{ vars.GCP_SERVICE_ACCOUNT }}
-        run: |
-          node --input-type=module <<'NODE'
-          const required = ['AMO_API_KEY', 'AMO_API_SECRET', 'CWS_PUBLISHER_ID', 'CWS_EXTENSION_ID', 'GCP_WORKLOAD_IDENTITY_PROVIDER', 'GCP_SERVICE_ACCOUNT'];
-          const missing = required.filter(name => !process.env[name]?.trim());
-          if (missing.length) throw new Error(`Configure GitHub Actions secrets/variables before publishing: ${missing.join(', ')}. See docs/RELEASING.md.`);
-          NODE
 
   firefox:
-    needs: [validate, configuration]
+    needs: [validate, release_guard]
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
@@ -60,6 +46,21 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Require Firefox publishing credentials
+        env:
+          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
+          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { appendFile } from 'node:fs/promises';
+          const missing = ['AMO_API_KEY', 'AMO_API_SECRET'].filter(name => !process.env[name]?.trim());
+          if (missing.length) {
+            const message = `Firefox publishing needs GitHub Actions secrets: ${missing.join(', ')}. Configure them using docs/RELEASING.md, then rerun the failed Firefox job. No Firefox upload was attempted; Chrome publishing can continue independently.`;
+            console.error(message);
+            await appendFile(process.env.GITHUB_STEP_SUMMARY, `### Firefox setup required\n${message}\n`);
+            process.exit(1);
+          }
+          NODE
       - run: npm ci --ignore-scripts
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
@@ -70,17 +71,18 @@ jobs:
           sha256sum --check dist/SHA256SUMS
           unzip -q "dist/typewell-${RELEASE_VERSION}.zip" -d firefox-upload
       - name: Submit the Firefox update and reviewer source
+        id: submit_firefox
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}
         run: node scripts/publish-firefox.mjs
       - name: Explain partial failures
-        if: failure()
+        if: ${{ failure() && steps.submit_firefox.outcome == 'failure' }}
         run: |
           printf '### Firefox needs attention\nCheck the AMO version dashboard before retrying. A source-upload failure can occur after the version was created. Do not assume a failed job means no submission occurred.\n' >> "$GITHUB_STEP_SUMMARY"
 
   chrome:
-    needs: [validate, configuration]
+    needs: [validate, release_guard]
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
@@ -93,6 +95,24 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
+      - name: Require Chrome publishing configuration
+        env:
+          CWS_PUBLISHER_ID: ${{ vars.CWS_PUBLISHER_ID }}
+          CWS_EXTENSION_ID: ${{ vars.CWS_EXTENSION_ID }}
+          GCP_WORKLOAD_IDENTITY_PROVIDER: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          GCP_SERVICE_ACCOUNT: ${{ vars.GCP_SERVICE_ACCOUNT }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { appendFile } from 'node:fs/promises';
+          const required = ['CWS_PUBLISHER_ID', 'CWS_EXTENSION_ID', 'GCP_WORKLOAD_IDENTITY_PROVIDER', 'GCP_SERVICE_ACCOUNT'];
+          const missing = required.filter(name => !process.env[name]?.trim());
+          if (missing.length) {
+            const message = `Chrome publishing needs GitHub Actions variables: ${missing.join(', ')}. Configure them using docs/RELEASING.md, then rerun the failed Chrome job. No Chrome upload was attempted; Firefox publishing can continue independently.`;
+            console.error(message);
+            await appendFile(process.env.GITHUB_STEP_SUMMARY, `### Chrome setup required\n${message}\n`);
+            process.exit(1);
+          }
+          NODE
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: ${{ needs.validate.outputs.artifact_name }}

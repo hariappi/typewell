@@ -7,7 +7,7 @@ Drafts and prereleases do not publish to either store. A normal push or pull req
 ## What the workflow does
 
 1. [`release.yml`](../.github/workflows/release.yml) calls [`checks.yml`](../.github/workflows/checks.yml). It validates the version and release notes, runs unit tests and extension lint, builds both editions and the Mozilla source ZIP, and runs Firefox and Chromium integration tests.
-2. The configuration job checks that the release commit belongs to `main` and that both stores' required secrets and variables are present. Missing configuration stops both uploads. This checks presence, not whether the credentials will be accepted.
+2. The shared release guard checks that the release commit belongs to `main`. Each store job then checks its own credentials or variables. Missing Firefox secrets fail only the Firefox job; Chrome can proceed. Missing Chrome configuration fails only the Chrome job. These checks establish presence, not whether the credentials will be accepted.
 3. The two store jobs download the tested artifacts and verify their SHA-256 checksums. Firefox uses `web-ext sign --channel listed`, with release notes and reviewer source. Chrome uses a short-lived Google token obtained through GitHub OIDC, then uploads and submits the Chromium ZIP.
 4. Each job records its result in the GitHub Actions run summary. Check the store dashboards for review and publication status.
 
@@ -15,7 +15,15 @@ The jobs run independently after validation. One store can accept an update whil
 
 ## Configure the accounts once
 
-As of October 19, 2026, the Google project, service account, and restricted GitHub identity provider are created. The provider is active, all four Chrome/GCP repository variables are saved and read back, and the publisher has confirmed linking the service account in Chrome's dashboard. Google's billing API confirmed `billingEnabled: false` with no billing account attached. Mozilla's two GitHub secrets still require account setup, so the shared release workflow will stop before either upload until they are added. Live Chrome API authorization remains unverified: the local Google user cannot impersonate the publishing service account, whose federation access is granted to GitHub releases. No store upload has been performed by this workflow.
+As of October 19, 2026, the Google project, service account, and restricted GitHub identity provider are created. The provider is active, all four Chrome/GCP repository variables are saved and read back, and the publisher has confirmed linking the service account in Chrome's dashboard. Google's billing API confirmed `billingEnabled: false` with no billing account attached. Mozilla's two GitHub secrets still require account setup; their absence stops only Firefox's job. Chrome access can be checked separately using the read-only workflow below. No store upload has been performed by this workflow.
+
+### Check Chrome access without publishing
+
+Open [Check Chrome Web Store access](https://github.com/hariappi/typewell/actions/workflows/check-chrome.yml), choose **Run workflow**, and select **main**. From the terminal, use `gh workflow run check-chrome.yml --repo hariappi/typewell --ref main`.
+
+The check requires only the four Chrome/GCP variables below. It obtains a five-minute token scoped to `https://www.googleapis.com/auth/chromewebstore.readonly`, then makes a `GET` request to [fetchStatus](https://developer.chrome.com/docs/webstore/api/reference/rest/v2/publishers.items/fetchStatus). It reports published/submitted versions and store warning flags in the run summary. It never uploads, publishes, or cancels a submission, and it does not require Firefox secrets or a new release. A successful check verifies read access through the configured GitHub identity; it does not prove a future package will pass validation or review.
+
+Google accepts this manual workflow only from `main`, in addition to the existing tagged release workflow. Other branches and pull requests cannot use this provider. The workflow also rejects a manual dispatch from another branch before requesting a token.
 
 ### Firefox secrets
 
@@ -47,14 +55,20 @@ attribute.ref=assertion.ref
 attribute.workflow_ref=assertion.workflow_ref
 ```
 
-Restrict trust to this repository's release workflow:
+Restrict trust to this repository's release workflow and the manual access check on `main`:
 
 ```text
 assertion.repository_id == '1425913806' &&
 assertion.repository_owner_id == '68689504' &&
-assertion.event_name == 'release' &&
-assertion.ref.startsWith('refs/tags/v') &&
-assertion.workflow_ref == 'hariappi/typewell/.github/workflows/release.yml@' + assertion.ref
+(
+  (assertion.event_name == 'release' &&
+   assertion.ref.startsWith('refs/tags/v') &&
+   assertion.workflow_ref == 'hariappi/typewell/.github/workflows/release.yml@' + assertion.ref)
+  ||
+  (assertion.event_name == 'workflow_dispatch' &&
+   assertion.ref == 'refs/heads/main' &&
+   assertion.workflow_ref == 'hariappi/typewell/.github/workflows/check-chrome.yml@refs/heads/main')
+)
 ```
 
 Grant `roles/iam.workloadIdentityUser` on the publishing service account only to the pool's principal set for `attribute.repository_id/1425913806`. The numeric repository and owner IDs prevent another account from gaining access by reusing a repository name. GitHub documents the available [OIDC claims](https://docs.github.com/en/actions/reference/security/oidc).
@@ -72,7 +86,7 @@ Add these **repository variables** in [Typewell's Actions variables](https://git
 
 Typewell's existing listing is managed in its [Chrome developer dashboard](https://chrome.google.com/webstore/devconsole/4f6fc093-c0cf-463d-8bb8-66594ad86ab2/fbkhpcclcklddcfoanadpalnfelpngch/edit).
 
-These identifiers are configuration, not access tokens. The workflow requests only the `https://www.googleapis.com/auth/chromewebstore` token scope. [Find the Chrome publisher ID](https://developer.chrome.com/docs/webstore/using-api#obtain_your_publisher_id)
+These identifiers are configuration, not access tokens. Publishing requests the `https://www.googleapis.com/auth/chromewebstore` token scope; the separate access check requests only its `.readonly` scope. [Find the Chrome publisher ID](https://developer.chrome.com/docs/webstore/using-api#obtain_your_publisher_id)
 
 Complete the initial store listings, contact verification, screenshots, privacy disclosures, and required account checks in the dashboards. This workflow updates an existing Typewell listing; it does not maintain those fields. Update both listings and privacy disclosures when a future change affects their accuracy. Chrome requires completed **Store listing** and **Privacy** tabs and account two-step verification. [Chrome API prerequisites](https://developer.chrome.com/docs/webstore/using-api#prerequisites)
 
@@ -90,7 +104,7 @@ Typewell uses exactly three version components. Each must be from 0 to 65535, wi
 
 Read the failing job and check the destination store before retrying. A timeout or failed job can happen after a request reached the store.
 
-- **Configuration failed:** correct the missing GitHub secrets or variables, then rerun the failed jobs.
+- **A store's configuration check failed:** correct that store's missing GitHub secrets or variables, then rerun its failed job. A missing Firefox secret does not block Chrome, or vice versa. The overall run remains failed until both store jobs succeed, even if one store has already accepted its submission.
 - **Only one store failed:** rerun that failed store job only. Keep the successful submission in place. Do not rerun all jobs just to retry one store.
 - **Firefox failed:** inspect the version in AMO first. `web-ext` creates the version before uploading reviewer source, so a source-upload failure can leave a version already created. Complete that existing version in AMO when appropriate instead of blindly submitting it again. The publishing guard skips a matching enabled listed version only after confirming its reviewer source and a public or unreviewed state; incomplete versions stop with recovery guidance.
 - **Chrome failed:** the script checks for an identical version already submitted or published and skips duplicate work. It stops for conflicting pending versions, rejected/cancelled versions, and uncertain responses. Resolve those in the dashboard before retrying; do not cancel an existing review automatically.

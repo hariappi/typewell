@@ -1,5 +1,11 @@
 # Verification — October 19, 2026
 
+## Independent store setup and Chrome access check
+
+All **85 unit tests** pass, including seven focused tests for the read-only Chrome status checker. They cover the exact GET endpoint, response identity validation, bounded retries, draft status, and redaction of tokens and response bodies. The actual release credential-check scripts were also executed with each store configured alone: its own guard passed and the other store's missing-configuration guard failed. Actionlint reports no findings.
+
+The release jobs still depend on shared validation for both browser editions and the main-branch guard. Missing credentials fail only the affected store job. The separate manual Chrome check uses a five-minute read-only token from `main`; its GitHub run summary is the evidence for current account access. A status read does not upload a package or confirm future store approval.
+
 ## Release automation
 
 The release workflow was validated locally with **78 unit tests**, including mocked Chrome and Firefox API failure/retry cases and delayed theme-storage reads, and **actionlint** with no findings. Firefox 158.0 passed 35 integration checks; Brave 155.0.8059.85 passed 16 integration checks. Extension lint reported 0 errors, warnings, and notices. Both browser builds and the Mozilla source package were produced in a temporary checkout to preserve historical release archives.
