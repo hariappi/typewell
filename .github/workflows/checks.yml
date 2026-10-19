@@ -68,7 +68,16 @@ jobs:
         env:
           CHROMIUM_BINARY: ${{ steps.chrome.outputs.chrome-path }}
           CHROMEDRIVER: ${{ steps.chrome.outputs.chromedriver-path }}
-        run: npm run test:chromium
+          # Ubuntu 24.04 restricts user namespaces for downloaded Chrome builds.
+          # Use the installed Chrome sandbox helper documented by Chromium:
+          # https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
+          CHROME_DEVEL_SANDBOX: /opt/google/chrome/chrome-sandbox
+        run: |
+          if [[ ! -f "$CHROME_DEVEL_SANDBOX" || ! -x "$CHROME_DEVEL_SANDBOX" || "$(stat -c '%u:%g:%a' "$CHROME_DEVEL_SANDBOX")" != '0:0:4755' ]]; then
+            echo '::error::The runner must provide the root-owned Chrome sandbox helper with mode 4755. Chromium tests cannot start safely.'
+            exit 1
+          fi
+          npm run test:chromium
       - name: Record artifact checksums
         env:
           RELEASE_VERSION: ${{ steps.release.outputs.version }}

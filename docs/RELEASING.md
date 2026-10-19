@@ -28,6 +28,8 @@ Sign in to the Mozilla account that owns Typewell and open [AMO API credentials]
 
 Enter secrets directly in GitHub. Never paste them into chat, commit them, or place them in a release description. The workflow passes them through the environment variables supported by [`web-ext`](https://extensionworkshop.com/documentation/develop/web-ext-command-reference/#api-key).
 
+If AMO asks for email confirmation first, search the account's inbox for **Confirmation for developer API keys** from `nobody@mozilla.org`. This goes to the AMO account email, which may differ from the listing's support email. An Apple `privaterelay.appleid.com` address forwards to the inbox configured in Sign in with Apple. On the API-key page, **Haven't received the email yet? → Re-send email confirmation** requests a replacement; use the newest link and avoid repeated requests. If it still does not arrive, use [AMO Contact Support](https://addons.mozilla.org/en-US/developers/support). [Mozilla's confirmation-email implementation](https://github.com/mozilla/addons-server/blob/bce4a39e4009bb99479d9c73f5def0e7bae868a4/src/olympia/api/models.py#L139-L158) · [Apple email forwarding](https://support.apple.com/en-us/105078)
+
 ### Chrome identity and variables
 
 The dedicated Google Cloud project is `typewell-publishing-1425913806` (number `645044318350`). It has no linked billing account or compute resources. Its Chrome Web Store, IAM, IAM Credentials, and Security Token Service APIs are enabled. The service account is `typewell-publisher@typewell-publishing-1425913806.iam.gserviceaccount.com`; its provider is `projects/645044318350/locations/global/workloadIdentityPools/github/providers/typewell-release`.
