@@ -24,6 +24,8 @@ const browserLabel = browserName === 'brave' ? 'Brave' : /for testing/i.test(bin
 const extensionVersion = JSON.parse(await readFile(`${extensionPath}/manifest.json`, 'utf8')).version;
 const darkMode = process.env.TYPEWELL_TEST_DARK === '1';
 await mkdir(results, { recursive: true });
+const driverLogPath = fileURLToPath(new URL(`${browserName}-chromedriver.log`, results));
+const browserLogPath = fileURLToPath(new URL(`${browserName}-browser.log`, results));
 const profileDirectory = await mkdtemp(`${tmpdir()}/typewell-${browserName}-`);
 const downloadDirectory = `${profileDirectory}/downloads`;
 await mkdir(downloadDirectory);
@@ -58,14 +60,15 @@ const options = new chrome.Options().setChromeBinaryPath(binary).addArguments(
   '--disable-component-update', '--disable-background-networking', '--no-proxy-server',
   '--host-resolver-rules=MAP www.notion.so 127.0.0.1', '--window-size=1260,1000',
   `--ignore-certificate-errors-spki-list=${publicKeyHash}`
-).setUserPreferences({
+).setBrowserLogFile(browserLogPath).setUserPreferences({
   'download.default_directory': downloadDirectory,
   'download.prompt_for_download': false,
   'profile.default_content_setting_values.notifications': 2
 });
 if (process.env.TYPEWELL_TEST_HEADFUL !== '1') options.addArguments('--headless=new');
 if (darkMode) options.addArguments('--force-dark-mode');
-const service = new chrome.ServiceBuilder(process.env.CHROMEDRIVER);
+const service = new chrome.ServiceBuilder(process.env.CHROMEDRIVER)
+  .loggingTo(driverLogPath).enableVerboseLogging().enableChromeLogging();
 const checks = [];
 const check = async (name, fn) => { await fn(); checks.push(name); console.log(`PASS ${name}`); };
 const profile = fontId => ({ fontId, customFont: '', scale: 100, lineHeight: 0, letterSpacing: 0, wordSpacing: 0, preserveCode: true, target: 'all' });
@@ -140,6 +143,7 @@ async function insertBackup(value, filename = 'backup.json') {
 }
 
 try {
+  console.log(`Starting ${browserLabel}\nBinary: ${binary}\nChromeDriver log: ${driverLogPath}\nBrowser log: ${browserLogPath}`);
   driver = await new Builder().forBrowser('chrome').setChromeOptions(options).setChromeService(service).build();
   await driver.manage().setTimeouts({ script: 15000 });
   const capabilities = await driver.getCapabilities();
@@ -323,6 +327,18 @@ try {
   await writeFile(new URL(`${browserName}-results.json`, results), JSON.stringify({ browser: browserName, browserLabel, version, binary, extensionVersion, generatedAt: new Date().toISOString(), extensionURL, checks }, null, 2));
   console.log(`\n${checks.length} real ${browserLabel} integration checks passed.`);
 } catch (error) {
+  await writeFile(new URL(`${browserName}-failure.json`, results), JSON.stringify({
+    browser: browserName, binary, extensionVersion, checks,
+    error: { name: error.name, message: error.message }, driverLogPath, browserLogPath
+  }, null, 2));
+  // Chrome may fail before WebDriver can create a session or take a screenshot.
+  // Keep both logs outside the disposable profile and include stderr in CI output.
+  for (const path of [browserLogPath, driverLogPath]) {
+    try {
+      const log = await readFile(path, 'utf8');
+      console.error(`Last log lines from ${path}:\n${log.split('\n').slice(-40).join('\n')}`);
+    } catch { /* The browser/driver might not have created its log yet. */ }
+  }
   if (driver) {
     try { await writeFile(new URL(`${browserName}-failure.png`, results), await driver.takeScreenshot(), 'base64'); } catch { /* Best effort. */ }
   }
