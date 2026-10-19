@@ -69,12 +69,20 @@ jobs:
           CHROMIUM_BINARY: ${{ steps.chrome.outputs.chrome-path }}
           CHROMEDRIVER: ${{ steps.chrome.outputs.chromedriver-path }}
           # Ubuntu 24.04 restricts user namespaces for downloaded Chrome builds.
-          # Use the installed Chrome sandbox helper documented by Chromium:
+          # Install the same-version bundled helper on this disposable runner:
           # https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
-          CHROME_DEVEL_SANDBOX: /opt/google/chrome/chrome-sandbox
+          CHROME_DEVEL_SANDBOX: /usr/local/lib/typewell-chrome-sandbox/chrome_sandbox
         run: |
-          if [[ ! -f "$CHROME_DEVEL_SANDBOX" || ! -x "$CHROME_DEVEL_SANDBOX" || "$(stat -c '%u:%g:%a' "$CHROME_DEVEL_SANDBOX")" != '0:0:4755' ]]; then
-            echo '::error::The runner must provide the root-owned Chrome sandbox helper with mode 4755. Chromium tests cannot start safely.'
+          source_helper="${CHROMIUM_BINARY%/*}/chrome_sandbox"
+          sandbox_directory="${CHROME_DEVEL_SANDBOX%/*}"
+          if [[ ! -f "$source_helper" || ! -x "$source_helper" || -L "$source_helper" ]]; then
+            echo '::error::The downloaded Chrome for Testing package is missing its executable chrome_sandbox helper.'
+            exit 1
+          fi
+          sudo install -d -o root -g root -m 0755 "$sandbox_directory"
+          sudo install -o root -g root -m 4755 "$source_helper" "$CHROME_DEVEL_SANDBOX"
+          if [[ "$(stat -c '%u:%g:%a' "$sandbox_directory")" != '0:0:755' || "$(stat -c '%u:%g:%a' "$CHROME_DEVEL_SANDBOX")" != '0:0:4755' || ! -x "$CHROME_DEVEL_SANDBOX" ]]; then
+            echo '::error::The Chrome sandbox helper must be root-owned with mode 4755 in a root-owned directory with mode 0755.'
             exit 1
           fi
           npm run test:chromium
