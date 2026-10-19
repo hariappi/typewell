@@ -9,6 +9,7 @@ import { Builder, By, until } from 'selenium-webdriver';
 import firefox from 'selenium-webdriver/firefox.js';
 
 const root = new URL('../', import.meta.url);
+const extensionVersion = JSON.parse(await readFile(new URL('extension/manifest.json', root), 'utf8')).version;
 const results = new URL('test-results/', root);
 await mkdir(results, { recursive: true });
 const addonId = 'typewell@font-changer.local';
@@ -58,9 +59,9 @@ if (process.platform === 'darwin' && !process.env.FIREFOX_DIRECT_LAUNCH) {
     '-headless', '-no-remote', '--marionette', '--remote-allow-system-access', '-profile', testProfileDirectory]);
   service.addArguments('--connect-existing', '--marionette-port', String(marionettePort));
 }
-let driver, page, preferences;
+let driver, page, preferences, activeCheck = 'Firefox setup';
 const checks = [];
-const check = (name, fn) => (async () => { await fn(); checks.push(name); console.log(`PASS ${name}`); })();
+const check = (name, fn) => (async () => { activeCheck = name; await fn(); checks.push(name); console.log(`PASS ${name}`); })();
 const profile = fontId => ({ fontId, customFont: '', scale: 100, lineHeight: 0, letterSpacing: 0, wordSpacing: 0, preserveCode: true, target: 'all' });
 async function change(operation) {
   await driver.switchTo().window(preferences);
@@ -74,6 +75,49 @@ async function fontIs(id, family) {
 }
 async function metrics(id, pseudo = null) {
   return driver.executeScript(`const element=document.getElementById(arguments[0]), css=getComputedStyle(element,arguments[1]); return {family:css.fontFamily,size:css.fontSize,weight:css.fontWeight,style:css.fontStyle,line:css.lineHeight,letter:css.letterSpacing};`, id, pseudo);
+}
+// Observe the test profile only. These listeners never apply a theme or write settings.
+async function traceThemeChanges() {
+  await driver.executeScript(`
+    const trace = window.__typewellTestThemeTrace = { startedAt: Date.now(), events: [] };
+    const record = (type, details = {}) => {
+      trace.events.push({ elapsedMs: Date.now() - trace.startedAt, type, themeAttribute: document.documentElement.getAttribute('data-theme'), ...details });
+      if (trace.events.length > 50) trace.events.shift();
+    };
+    record('trace-start', { themeApi: typeof window.TypewellTheme?.apply });
+    new MutationObserver(records => records.forEach(recordValue => record('theme-attribute', { oldValue: recordValue.oldValue })))
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'], attributeOldValue: true });
+    browser.storage.onChanged.addListener((changes, area) => {
+      if (changes.settings) record('storage-changed', { area, oldTheme: changes.settings.oldValue?.theme ?? null, newTheme: changes.settings.newValue?.theme ?? null });
+    });
+    window.addEventListener('error', event => record('script-error', { message: event.message, filename: event.filename, line: event.lineno }));
+    window.addEventListener('unhandledrejection', event => record('unhandled-rejection', { message: String(event.reason?.message || event.reason) }));
+  `);
+}
+
+async function captureThemeState() {
+  return driver.executeAsyncScript(`const done = arguments[arguments.length - 1];
+    const read = operation => Promise.race([
+      Promise.resolve().then(operation).then(value => ({ value }), error => ({ error: error.message })),
+      new Promise(resolve => setTimeout(() => resolve({ error: 'Diagnostic read timed out after 2000 ms' }), 2000))
+    ]);
+    const root = document.documentElement;
+    const state = {
+      url: location.href, readyState: document.readyState, userAgent: navigator.userAgent,
+      themeApi: typeof window.TypewellTheme?.apply,
+      themeAttribute: root.getAttribute('data-theme'), colorScheme: getComputedStyle(root).colorScheme,
+      backgroundColor: document.body ? getComputedStyle(document.body).backgroundColor : null,
+      systemDark: matchMedia('(prefers-color-scheme: dark)').matches,
+      choices: [...document.querySelectorAll('[data-theme-choice]')].map(button => ({ theme: button.dataset.themeChoice, pressed: button.getAttribute('aria-pressed') })),
+      message: document.getElementById('message')?.textContent ?? null,
+      scripts: [...document.scripts].map(script => script.src),
+      trace: window.__typewellTestThemeTrace ?? null
+    };
+    Promise.all([
+      read(() => browser.storage.local.get('settings').then(value => value.settings?.theme ?? null)),
+      read(() => browser.runtime.sendMessage({ type: 'GET_SETTINGS' }).then(value => value?.theme ?? null))
+    ]).then(([storageTheme, backgroundTheme]) => done({ ...state, storageTheme, backgroundTheme }), error => done({ ...state, diagnosticError: error.message }));
+  `);
 }
 // Firefox's normal switchTo.frame does not enter a remote extension popup.
 // Use its existing WebDriver actor in this isolated test session to exercise that document.
@@ -116,6 +160,7 @@ try {
   await driver.switchTo().newWindow('tab'); preferences = await driver.getWindowHandle();
   await driver.get(`${extensionURL}/options/options.html`);
   await driver.wait(until.elementLocated(By.id('enabled')), 5000);
+  await traceThemeChanges();
   console.log('Firefox', (await driver.getCapabilities()).get('browserVersion'));
   console.log('Permissions', await driver.executeAsyncScript(`const done=arguments[arguments.length-1];browser.permissions.getAll().then(done);`));
   await check('Firefox prevents private browsing access for this release', async () => {
@@ -126,7 +171,7 @@ try {
   await check('options page loads the real extension and all font assets', async () => {
     await driver.wait(async () => (await driver.findElement(By.id('total-fonts')).getText()) === '159', 5000);
     assert.equal(await driver.executeScript('return typeof browser.runtime.sendMessage'), 'function');
-    assert.equal(await driver.findElement(By.id('extension-version')).getText(), 'TYPEWELL · 1.2.3');
+    assert.equal(await driver.findElement(By.id('extension-version')).getText(), `TYPEWELL · ${extensionVersion}`);
     const loaded = await driver.executeAsyncScript(`const done=arguments[arguments.length-1]; Promise.all(Typewell.fonts.filter(f=>f.bundled).map(f=>document.fonts.load('16px "'+f.family+'"'))).then(results=>done(results.every(faces=>faces.length>0)),error=>done(error.message));`);
     assert.equal(loaded, true);
   });
@@ -138,12 +183,14 @@ try {
   await check('preferences can lock Typewell to light or dark appearance', async () => {
     const override = darkMode ? 'light' : 'dark';
     await driver.findElement(By.css(`[data-theme-choice="${override}"]`)).click();
-    await driver.wait(async () => await driver.executeScript('return document.documentElement.dataset.theme') === override, 5000);
+    await driver.wait(async () => await driver.executeScript('return document.documentElement.dataset.theme') === override, 5000,
+      `Preferences must apply data-theme="${override}" after the ${override} button is clicked; see failure-state.json for storage and theme-event evidence.`);
     assert.equal(await driver.executeScript('return getComputedStyle(document.documentElement).colorScheme'), override);
     assert.equal(await driver.executeScript('return getComputedStyle(document.body).backgroundColor'), override === 'dark' ? 'rgb(20, 26, 23)' : 'rgb(248, 247, 243)');
     assert.equal(await driver.findElement(By.css(`[data-theme-choice="${override}"]`)).getAttribute('aria-pressed'), 'true');
     await driver.findElement(By.css('[data-theme-choice="system"]')).click();
-    await driver.wait(async () => await driver.executeScript('return !document.documentElement.hasAttribute("data-theme")'), 5000);
+    await driver.wait(async () => await driver.executeScript('return !document.documentElement.hasAttribute("data-theme")'), 5000,
+      'Preferences must remove data-theme after System is clicked; see failure-state.json for storage and theme-event evidence.');
   });
   await check('new installation leaves ordinary pages unchanged', async () => {
     await driver.switchTo().window(page);
@@ -440,6 +487,10 @@ try {
 } catch (error) {
   if (driver) {
     try { await driver.setContext(firefox.Context.CONTENT); await writeFile(new URL('failure.png', results), await driver.takeScreenshot(), 'base64'); } catch { /* Best effort. */ }
+    const failure = { failedCheck: activeCheck, error: error.message, stack: error.stack, passedChecks: checks };
+    try { failure.theme = await captureThemeState(); } catch (diagnosticError) { failure.diagnosticError = diagnosticError.message; }
+    await writeFile(new URL('failure-state.json', results), `${JSON.stringify(failure, null, 2)}\n`);
+    console.error('Firefox failure state:', JSON.stringify(failure));
   }
   throw error;
 } finally {

@@ -8,6 +8,8 @@ Built independently, inspired by the workflow of [Advanced Font Changer](https:/
 
 One shared codebase produces a Firefox add-on and a Chromium extension for Chrome, Brave, and compatible desktop browsers. See [TESTING.md](TESTING.md) for current verification and coverage limits.
 
+Maintainers can publish updates to Firefox Add-ons and the Chrome Web Store by publishing a GitHub release. See the [release setup and publishing guide](docs/RELEASING.md) for account configuration and the coordinated release process.
+
 ## Try it in Chrome or Brave
 
 Use a current desktop browser based on **Chromium 114 or newer**. The same Chromium build works in both Chrome and Brave.

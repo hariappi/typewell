@@ -8,10 +8,15 @@
     return theme;
   };
   globalThis.TypewellTheme = { apply };
-  api.storage.local.get("settings")
-    .then(({ settings }) => apply(settings?.theme))
-    .catch(() => apply("system"));
+  let changedSinceLoad = false;
   api.storage.onChanged.addListener((changes, area) => {
-    if (area === "local" && changes.settings) apply(changes.settings.newValue?.theme);
+    if (area === "local" && changes.settings) {
+      changedSinceLoad = true;
+      apply(changes.settings.newValue?.theme);
+    }
   });
+  // A newer change must win even if the initial read resolves or fails later.
+  api.storage.local.get("settings")
+    .then(({ settings }) => { if (!changedSinceLoad) apply(settings?.theme); })
+    .catch(() => { if (!changedSinceLoad) apply("system"); });
 })();

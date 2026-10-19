@@ -1,0 +1,115 @@
+name: Validate both browser editions
+
+on:
+  workflow_call:
+    inputs:
+      release_tag:
+        type: string
+        default: ''
+    outputs:
+      version:
+        value: ${{ jobs.checks.outputs.version }}
+      artifact_name:
+        value: ${{ jobs.checks.outputs.artifact_name }}
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+      artifact_name: typewell-${{ github.run_id }}-${{ github.run_attempt }}
+    env:
+      NO_UPDATE_NOTIFIER: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Validate the coordinated version and reviewer metadata
+        id: release
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          if [ -z "$RELEASE_TAG" ]; then
+            export RELEASE_TAG="v$(node -p "require('./package.json').version")"
+          fi
+          node scripts/release-info.mjs
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build:all
+      - run: npm run package:amo
+        id: packages
+      - name: Set up Firefox
+        id: firefox
+        uses: browser-actions/setup-firefox@0bc507ddf224827e3b1af68e014d5e42ab93e795 # v1
+        with:
+          firefox-version: latest
+      - name: Test Firefox
+        env:
+          FIREFOX_BINARY: ${{ steps.firefox.outputs.firefox-path }}
+        run: npm run test:firefox
+      - name: Set up Chrome for Testing
+        id: chrome
+        if: ${{ !cancelled() && steps.packages.outcome == 'success' }}
+        uses: browser-actions/setup-chrome@48ad923757ca74d66703209fe939badbdf80f2f4 # v2
+        with:
+          chrome-version: stable
+          install-chromedriver: true
+      - name: Test Chromium
+        if: ${{ !cancelled() && steps.chrome.outcome == 'success' }}
+        env:
+          CHROMIUM_BINARY: ${{ steps.chrome.outputs.chrome-path }}
+          CHROMEDRIVER: ${{ steps.chrome.outputs.chromedriver-path }}
+          # Ubuntu 24.04 restricts user namespaces for downloaded Chrome builds.
+          # Install the same-version bundled helper on this disposable runner:
+          # https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
+          CHROME_DEVEL_SANDBOX: /usr/local/lib/typewell-chrome-sandbox/chrome_sandbox
+        run: |
+          source_helper="${CHROMIUM_BINARY%/*}/chrome_sandbox"
+          sandbox_directory="${CHROME_DEVEL_SANDBOX%/*}"
+          if [[ ! -f "$source_helper" || ! -x "$source_helper" || -L "$source_helper" ]]; then
+            echo '::error::The downloaded Chrome for Testing package is missing its executable chrome_sandbox helper.'
+            exit 1
+          fi
+          sudo install -d -o root -g root -m 0755 "$sandbox_directory"
+          sudo install -o root -g root -m 4755 "$source_helper" "$CHROME_DEVEL_SANDBOX"
+          if [[ "$(stat -c '%u:%g:%a' "$sandbox_directory")" != '0:0:755' || "$(stat -c '%u:%g:%a' "$CHROME_DEVEL_SANDBOX")" != '0:0:4755' || ! -x "$CHROME_DEVEL_SANDBOX" ]]; then
+            echo '::error::The Chrome sandbox helper must be root-owned with mode 4755 in a root-owned directory with mode 0755.'
+            exit 1
+          fi
+          npm run test:chromium
+      - name: Record artifact checksums
+        env:
+          RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          sha256sum "dist/typewell-${RELEASE_VERSION}.zip" \
+            "dist/typewell-${RELEASE_VERSION}-chromium.zip" \
+            "dist/typewell-${RELEASE_VERSION}-source.zip" \
+            dist/amo-metadata.json > dist/SHA256SUMS
+      - name: Save validated packages
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: typewell-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            dist/typewell-*.zip
+            dist/amo-metadata.json
+            dist/amo-release.json
+            dist/SHA256SUMS
+      - name: Save browser test results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: browser-results-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 3
+          if-no-files-found: ignore
+          path: test-results/
