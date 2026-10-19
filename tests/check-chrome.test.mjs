@@ -2,9 +2,10 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { checkChrome, formatChromeCheckSummary, readChromeCheckConfiguration } from '../scripts/check-chrome.mjs';
 
+// Synthetic identifiers for mocked requests; do not use real account metadata.
 const env = {
-  CWS_PUBLISHER_ID: '4f6fc093-c0cf-463d-8bb8-66594ad86ab2',
-  CWS_EXTENSION_ID: 'fbkhpcclcklddcfoanadpalnfelpngch',
+  CWS_PUBLISHER_ID: 'test-publisher',
+  CWS_EXTENSION_ID: 'abcdefghijklmnopabcdefghijklmnop',
   CWS_ACCESS_TOKEN: 'secret-token-not-for-output'
 };
 const name = `publishers/${env.CWS_PUBLISHER_ID}/items/${env.CWS_EXTENSION_ID}`;
