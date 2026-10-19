@@ -1,67 +1,99 @@
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { copyFile, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
-import { join, relative } from 'node:path';
+import { copyFile, lstat, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Packaging only. This script never signs in, uploads, or submits to Mozilla.
-const root = fileURLToPath(new URL('../', import.meta.url));
-const dist = join(root, 'dist');
-const bundle = join(dist, 'amo');
-const manifest = JSON.parse(await readFile(join(root, 'extension/manifest.json'), 'utf8'));
-const version = manifest.version;
-if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error('Expected a three-part release version.');
-if (manifest.incognito !== 'not_allowed') throw new Error('Review private-session handling before enabling private browsing.');
+const projectRoot = fileURLToPath(new URL('../', import.meta.url));
+const sourceDirectories = ['extension', 'scripts', 'tests', 'docs'];
+const rootFiles = ['AGENTS.md', '.gitignore', 'README.md', 'PRIVACY.md', 'LICENSE', 'TESTING.md', 'package.json', 'package-lock.json'];
+const excludedDirectories = new Set(['node_modules', 'dist', 'test-results', 'web-ext-artifacts', 'coverage', 'playwright-report']);
 
-execFileSync(process.execPath, [join(root, 'scripts/build.mjs')], { cwd: root, stdio: 'inherit' });
-await rm(bundle, { recursive: true, force: true });
-await mkdir(bundle, { recursive: true });
+function storeSourceFiles(version) {
+  if (typeof version !== 'string' || version.trim() !== version || !/^\d+\.\d+\.\d+$/.test(version)) throw new Error('Expected a three-part release version.');
+  return [
+    'store/README.md', 'store/listing.md', `store/release-notes-${version}.md`,
+    'store/reviewer-notes-submission.txt', 'store/reviewer-notes.md',
+    'store/icon-64.png', 'store/icon-32.png', 'store/icon.svg',
+    'store/screenshots/font-picker.png', 'store/screenshots/preferences.png'
+  ];
+}
 
-// Explicitly included project material only; no .git, node_modules, browser profiles,
-// local test downloads, environment files, or signing credentials enter the source ZIP.
-async function filesUnder(directory) {
-  const entries = await readdir(join(root, directory), { withFileTypes: true });
-  const files = [];
-  for (const entry of entries) {
-    const path = join(directory, entry.name);
-    if (entry.name.startsWith('.')) continue;
-    if (entry.isDirectory()) files.push(...await filesUnder(path));
-    else if (entry.isFile() && /\.(?:js|mjs|json|html|css|svg|png|woff2|txt|md)$/.test(entry.name)) files.push(path);
-    else if (entry.name === 'LICENSE' && entry.isFile()) files.push(path);
-    else throw new Error(`Unexpected source file or symlink: ${path}`);
+function excludedPath(path) {
+  const segments = path.split('/');
+  return path.includes('\\') || segments.some(segment => !segment || segment === '..' || segment.startsWith('.') || excludedDirectories.has(segment));
+}
+
+// The store directory also contains private dashboard captures and generated ZIPs.
+// Include its known submission inputs explicitly, never by recursive traversal.
+export function isPackagedSourcePath(path, version) {
+  const explicitFiles = [...rootFiles, ...storeSourceFiles(version)];
+  if (explicitFiles.includes(path)) return true;
+  if (excludedPath(path) || !sourceDirectories.includes(path.split('/')[0])) return false;
+  return /\.(?:js|mjs|json|html|css|svg|png|jpe?g|woff2|txt|md)$/.test(path) || path.endsWith('/LICENSE');
+}
+
+export async function collectSourceFiles(root, version) {
+  const sourceFiles = [...rootFiles, ...storeSourceFiles(version)];
+  for (const path of sourceFiles) {
+    if (!(await lstat(join(root, path))).isFile()) throw new Error(`Expected a regular source file: ${path}`);
   }
-  return files.sort();
+  async function filesUnder(directory) {
+    if (!(await lstat(join(root, directory))).isDirectory()) throw new Error(`Expected a regular source directory: ${directory}`);
+    const entries = await readdir(join(root, directory), { withFileTypes: true });
+    for (const entry of entries) {
+      const path = `${directory}/${entry.name}`;
+      if (excludedPath(path)) continue;
+      if (entry.isDirectory()) await filesUnder(path);
+      else if (entry.isSymbolicLink()) throw new Error(`Unexpected source symlink: ${path}`);
+      else if (entry.isFile() && isPackagedSourcePath(path, version)) sourceFiles.push(path);
+    }
+  }
+  for (const directory of sourceDirectories) await filesUnder(directory);
+  return sourceFiles.sort();
 }
 
-const sourceFiles = ['README.md', 'PRIVACY.md', 'LICENSE', 'TESTING.md', 'package.json', 'package-lock.json'];
-for (const directory of ['extension', 'scripts', 'tests', 'docs', 'store']) sourceFiles.push(...await filesUnder(directory));
-const sourceName = `typewell-${version}-source.zip`;
-const sourcePath = join(dist, sourceName);
-await rm(sourcePath, { force: true });
-execFileSync('zip', ['-q', '-X', sourcePath, ...sourceFiles.sort()], { cwd: root });
+export async function packageAmo(root = projectRoot) {
+  const dist = join(root, 'dist');
+  const bundle = join(dist, 'amo');
+  const manifest = JSON.parse(await readFile(join(root, 'extension/manifest.json'), 'utf8'));
+  const version = manifest.version;
+  if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error('Expected a three-part release version.');
+  if (manifest.incognito !== 'not_allowed') throw new Error('Review private-session handling before enabling private browsing.');
+  const sourceFiles = await collectSourceFiles(root, version);
 
-const copied = [
-  [`dist/typewell-${version}.xpi`, `typewell-${version}.xpi`],
-  [`dist/${sourceName}`, sourceName],
-  ['store/listing.md', 'listing.md'],
-  [`store/release-notes-${version}.md`, 'release-notes.md'],
-  ['store/reviewer-notes-submission.txt', 'reviewer-notes-submission.txt'],
-  ['store/reviewer-notes.md', 'reviewer-notes.md'],
-  ['PRIVACY.md', 'PRIVACY.md'],
-  ['LICENSE', 'LICENSE'],
-  ['TESTING.md', 'TESTING.md'],
-  ['store/icon-64.png', 'icon-64.png'],
-  ['store/icon-32.png', 'icon-32.png'],
-  ['store/icon.svg', 'icon.svg'],
-  ['store/screenshots/font-picker.png', 'screenshots/font-picker.png'],
-  ['store/screenshots/preferences.png', 'screenshots/preferences.png']
-];
-for (const [from, to] of copied) {
-  const target = join(bundle, to);
-  await mkdir(join(target, '..'), { recursive: true });
-  await copyFile(join(root, from), target);
-}
-await writeFile(join(bundle, 'SUBMISSION.md'), `# Typewell ${version} — Mozilla submission kit
+  execFileSync(process.execPath, [join(root, 'scripts/build.mjs')], { cwd: root, stdio: 'inherit' });
+  await rm(bundle, { recursive: true, force: true });
+  await mkdir(bundle, { recursive: true });
+
+  const sourceName = `typewell-${version}-source.zip`;
+  const sourcePath = join(dist, sourceName);
+  await rm(sourcePath, { force: true });
+  execFileSync('zip', ['-q', '-X', sourcePath, ...sourceFiles.sort()], { cwd: root });
+
+  const copied = [
+    [`dist/typewell-${version}.xpi`, `typewell-${version}.xpi`],
+    [`dist/${sourceName}`, sourceName],
+    ['store/listing.md', 'listing.md'],
+    [`store/release-notes-${version}.md`, 'release-notes.md'],
+    ['store/reviewer-notes-submission.txt', 'reviewer-notes-submission.txt'],
+    ['store/reviewer-notes.md', 'reviewer-notes.md'],
+    ['PRIVACY.md', 'PRIVACY.md'],
+    ['LICENSE', 'LICENSE'],
+    ['TESTING.md', 'TESTING.md'],
+    ['store/icon-64.png', 'icon-64.png'],
+    ['store/icon-32.png', 'icon-32.png'],
+    ['store/icon.svg', 'icon.svg'],
+    ['store/screenshots/font-picker.png', 'screenshots/font-picker.png'],
+    ['store/screenshots/preferences.png', 'screenshots/preferences.png']
+  ];
+  for (const [from, to] of copied) {
+    const target = join(bundle, to);
+    await mkdir(join(target, '..'), { recursive: true });
+    await copyFile(join(root, from), target);
+  }
+  await writeFile(join(bundle, 'SUBMISSION.md'), `# Typewell ${version} — Mozilla submission kit
 
 Prepared locally. Nothing has been uploaded, signed, or published.
 
@@ -74,25 +106,28 @@ Prepared locally. Nothing has been uploaded, signed, or published.
 **TESTING.md** records local verification. **amo-release.json** records sizes and SHA-256 checksums. For build commands, extract the source archive and read its README; the submission kit itself is not a source checkout.
 `);
 
-const report = {
-  name: manifest.name,
-  version,
-  addOnId: manifest.browser_specific_settings.gecko.id,
-  generatedAt: new Date().toISOString(),
-  distribution: 'listed',
-  status: 'prepared-locally-not-submitted',
-  signed: false,
-  minimumFirefox: manifest.browser_specific_settings.gecko.strict_min_version,
-  privateBrowsing: manifest.incognito,
-  artifacts: [],
-  sourceFileCount: sourceFiles.length
-};
-for (const filename of [`typewell-${version}.xpi`, `typewell-${version}.zip`, sourceName]) {
-  const path = join(dist, filename);
-  const bytes = await readFile(path);
-  report.artifacts.push({ path: relative(root, path), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
+  const report = {
+    name: manifest.name,
+    version,
+    addOnId: manifest.browser_specific_settings.gecko.id,
+    generatedAt: new Date().toISOString(),
+    distribution: 'listed',
+    status: 'prepared-locally-not-submitted',
+    signed: false,
+    minimumFirefox: manifest.browser_specific_settings.gecko.strict_min_version,
+    privateBrowsing: manifest.incognito,
+    artifacts: [],
+    sourceFileCount: sourceFiles.length
+  };
+  for (const filename of [`typewell-${version}.xpi`, `typewell-${version}.zip`, sourceName]) {
+    const path = join(dist, filename);
+    const bytes = await readFile(path);
+    report.artifacts.push({ path: relative(root, path), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
+  }
+  await writeFile(join(dist, 'amo-release.json'), `${JSON.stringify(report, null, 2)}\n`);
+  await copyFile(join(dist, 'amo-release.json'), join(bundle, 'amo-release.json'));
+  console.log(`Prepared dist/amo/ with the unsigned upload, listing assets, and ${sourceFiles.length}-file source archive.`);
+  console.log('No files have been uploaded to Mozilla. Checksums are in dist/amo-release.json.');
 }
-await writeFile(join(dist, 'amo-release.json'), `${JSON.stringify(report, null, 2)}\n`);
-await copyFile(join(dist, 'amo-release.json'), join(bundle, 'amo-release.json'));
-console.log(`Prepared dist/amo/ with the unsigned upload, listing assets, and ${sourceFiles.length}-file source archive.`);
-console.log('No files have been uploaded to Mozilla. Checksums are in dist/amo-release.json.');
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await packageAmo();

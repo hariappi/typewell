@@ -1,0 +1,117 @@
+name: Publish browser extensions
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+# Store submissions are serialized. Never interrupt an upload in progress.
+concurrency:
+  group: store-publishing
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: ${{ !github.event.release.prerelease && !github.event.release.draft }}
+    uses: ./.github/workflows/checks.yml
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+
+  configuration:
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require a release from main
+        run: git merge-base --is-ancestor HEAD origin/main
+      - name: Require configuration for both stores before either upload
+        env:
+          AMO_API_KEY: ${{ secrets.AMO_API_KEY }}
+          AMO_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+          CWS_PUBLISHER_ID: ${{ vars.CWS_PUBLISHER_ID }}
+          CWS_EXTENSION_ID: ${{ vars.CWS_EXTENSION_ID }}
+          GCP_WORKLOAD_IDENTITY_PROVIDER: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          GCP_SERVICE_ACCOUNT: ${{ vars.GCP_SERVICE_ACCOUNT }}
+        run: |
+          node --input-type=module <<'NODE'
+          const required = ['AMO_API_KEY', 'AMO_API_SECRET', 'CWS_PUBLISHER_ID', 'CWS_EXTENSION_ID', 'GCP_WORKLOAD_IDENTITY_PROVIDER', 'GCP_SERVICE_ACCOUNT'];
+          const missing = required.filter(name => !process.env[name]?.trim());
+          if (missing.length) throw new Error(`Configure GitHub Actions secrets/variables before publishing: ${missing.join(', ')}. See docs/RELEASING.md.`);
+          NODE
+
+  firefox:
+    needs: [validate, configuration]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      NO_UPDATE_NOTIFIER: '1'
+      RELEASE_VERSION: ${{ needs.validate.outputs.version }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ${{ needs.validate.outputs.artifact_name }}
+          path: dist
+      - name: Verify and unpack the tested Firefox package
+        run: |
+          sha256sum --check dist/SHA256SUMS
+          unzip -q "dist/typewell-${RELEASE_VERSION}.zip" -d firefox-upload
+      - name: Submit the Firefox update and reviewer source
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        run: node scripts/publish-firefox.mjs
+      - name: Explain partial failures
+        if: failure()
+        run: |
+          printf '### Firefox needs attention\nCheck the AMO version dashboard before retrying. A source-upload failure can occur after the version was created. Do not assume a failed job means no submission occurred.\n' >> "$GITHUB_STEP_SUMMARY"
+
+  chrome:
+    needs: [validate, configuration]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: ${{ needs.validate.outputs.artifact_name }}
+          path: dist
+      - run: sha256sum --check dist/SHA256SUMS
+      - name: Get a short-lived Chrome Web Store access token
+        id: auth
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/chromewebstore
+          create_credentials_file: false
+          export_environment_variables: false
+      - name: Submit the shared Chrome and Brave update
+        env:
+          CWS_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+          CWS_PUBLISHER_ID: ${{ vars.CWS_PUBLISHER_ID }}
+          CWS_EXTENSION_ID: ${{ vars.CWS_EXTENSION_ID }}
+          RELEASE_VERSION: ${{ needs.validate.outputs.version }}
+        run: node scripts/publish-chrome.mjs

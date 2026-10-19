@@ -1,5 +1,13 @@
 # Verification — October 19, 2026
 
+## Release automation
+
+The release workflow was validated locally with **64 unit tests**, including mocked Chrome and Firefox API failure/retry cases, and **actionlint** with no findings. Firefox 158.0 passed 35 integration checks; Brave 155.0.8059.85 passed 16 integration checks. Extension lint reported 0 errors, warnings, and notices. Both browser builds and the Mozilla source package were produced in a temporary checkout to preserve historical release archives.
+
+Publishing calls were tested with mocked API responses only. These checks do not confirm store authorization, acceptance, review, or publication. See [the release guide](docs/RELEASING.md) for the required account configuration.
+
+## Chromium port
+
 Typewell 1.2.3 now has Firefox and Chromium builds from the same source. The Chromium package was tested in **Chrome for Testing 155.0.8059.84** and **Brave (Chromium 155.0.8059.85)**. The Firefox regression suite was rerun in **Firefox 158.0**. Every browser used a new disposable profile; the tests did not modify the user's usual profiles.
 
 | Check | Result |

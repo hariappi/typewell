@@ -9,6 +9,7 @@ import { Builder, By, until } from 'selenium-webdriver';
 import firefox from 'selenium-webdriver/firefox.js';
 
 const root = new URL('../', import.meta.url);
+const extensionVersion = JSON.parse(await readFile(new URL('extension/manifest.json', root), 'utf8')).version;
 const results = new URL('test-results/', root);
 await mkdir(results, { recursive: true });
 const addonId = 'typewell@font-changer.local';
@@ -126,7 +127,7 @@ try {
   await check('options page loads the real extension and all font assets', async () => {
     await driver.wait(async () => (await driver.findElement(By.id('total-fonts')).getText()) === '159', 5000);
     assert.equal(await driver.executeScript('return typeof browser.runtime.sendMessage'), 'function');
-    assert.equal(await driver.findElement(By.id('extension-version')).getText(), 'TYPEWELL · 1.2.3');
+    assert.equal(await driver.findElement(By.id('extension-version')).getText(), `TYPEWELL · ${extensionVersion}`);
     const loaded = await driver.executeAsyncScript(`const done=arguments[arguments.length-1]; Promise.all(Typewell.fonts.filter(f=>f.bundled).map(f=>document.fonts.load('16px "'+f.family+'"'))).then(results=>done(results.every(faces=>faces.length>0)),error=>done(error.message));`);
     assert.equal(loaded, true);
   });
