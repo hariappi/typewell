@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>The quiet web · Typewell test</title>
+<style>
+body { font: 16px/1.4 Arial, sans-serif; background: #f8f7f3; color: #24392d; margin: 0; }
+main { max-width: 700px; margin: 60px auto; }
+h1 { font-family: Georgia, serif; font-size: 36px; font-weight: 700; }
+p { font-family: Arial, sans-serif; font-size: 16px; }
+.forced { font-family: Georgia, serif !important; }
+pre, code { font-family: monospace; font-size: 14px; }
+.icon { font-family: "Fake Icons"; font-size: 20px; }
+.obscure-family { font-family: "Font Awesome 6 Free"; }
+#pseudo::before { content: "\e001"; font-family: "Odd Icons"; font-size: 18px; }
+#scaled-parent { font-size: 20px; }
+#editor { font-family: Georgia; font-size: 18px; }
+.google-ligature { font-family: "Google Symbols"; font-size: 24px; letter-spacing: normal; }
+.google-material-ligature { font-family: "Google Material Icons"; font-size: 22px; }
+.google-sans-ligature { font-family: "Google Sans Icons"; font-size: 23px; }
+.google-symbols { font-family: "Obscure UI Glyphs"; font-size: 24px; }
+#google-copy { font-family: "Google Sans", Arial, sans-serif; }
+#google-pseudo::before, #empty-pseudo::before { content: "spark"; font-family: "Google Symbols"; font-size: 24px; }
+#empty-pseudo::after { content: "menu"; font-family: "Google Material Icons"; font-size: 20px; }
+iframe { border: 1px solid #ddd; width: 100%; height: 65px; }
+nav { font-size: 13px; }
+.react-code-text, .react-line-number, .blob-code-inner, .blob-num { font-family: monospace; font-size: 14px; line-height: 20px; letter-spacing: normal; white-space: pre; }
+.pl-k { color: #a32132; }
+</style>
+<nav id="navigation">A navigation label</nav>
+<main><article><h1 id="heading">The quiet pleasure of a good font.</h1>
+<p id="body-text">The web is a place we spend our days. It should feel a little like home.</p>
+<p id="forced" class="forced">Typography makes room for what matters.</p>
+<p>A <strong id="bold">bold idea</strong> with <em id="emphasis">a softer side.</em></p>
+<p id="scaled-parent">A growing thought.</p>
+<p><span id="icon" class="icon">&#xe001;</span> <span id="unknown-icon" class="obscure-family">menu</span> <span id="pseudo">A label with an icon</span></p>
+<pre><code id="code">const comfort = <span id="code-child">readability;</span></code></pre>
+<div id="editor" contenteditable="true">An editor that keeps its own formatting.</div>
+<section id="github-view"><p id="github-description">A passage explaining this source file.</p>
+<div class="react-code-file-contents"><div id="github-line-number" class="react-line-number">1</div>
+<div id="github-line" class="react-code-text"><span id="github-keyword" class="pl-k">from</span> sample <span class="pl-k">import</span> value</div></div>
+<table><tbody><tr><td id="github-legacy-number" class="blob-num">2</td><td id="github-legacy-code" class="blob-code blob-code-inner"><span id="github-legacy-token">return value</span></td></tr></tbody></table></section>
+<p id="google-copy">Google-style menu label <span id="google-symbol" class="google-ligature">spark</span>
+<span id="google-material-symbol" class="google-material-ligature">menu</span>
+<span id="google-sans-symbol" class="google-sans-ligature">settings</span>
+<span id="google-class-symbol" class="google-symbols">spark</span>
+<span id="google-pseudo">Upgrade</span><span id="empty-pseudo"></span></p>
+<iframe id="embedded" src="http://localhost:{{PORT}}/frame" title="Embedded content"></iframe>
+</article></main></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Typewell</title><script src="../shared/compat.js"></script><script src="../ui/theme.js"></script><link rel="stylesheet" href="../ui/base.css"><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="../icons/typewell.svg" alt=""><div><span class="brand-name">Typewell<span class="brand-period">.</span></span><span class="brand-note">Make the web your type.</span></div></div>
+    <div class="header-actions">
+      <button class="icon-button" id="power" title="Pause Typewell" aria-label="Pause Typewell" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M12 3v8M6.4 5.6a8 8 0 1 0 11.2 0"/></svg></button>
+      <button class="icon-button" id="settings" title="Open preferences" aria-label="Open preferences"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="var(--paper)"/><circle cx="15" cy="17" r="3" fill="var(--paper)"/></svg></button>
+    </div>
+  </header>
+  <section class="site-line" aria-label="Current website"><span class="site-symbol" aria-hidden="true">◎</span><span id="host">Finding your website…</span><span class="pill" id="site-status"><span class="dot"></span><span id="site-status-text">Original</span></span></section>
+  <div class="permission-notice" id="permission-notice" hidden><span>Allow website access to remember your fonts.</span><button id="grant-access">Allow access</button></div>
+  <div class="scope-control" aria-label="Apply font to"><button id="scope-site" aria-pressed="true">This website</button><button id="scope-global" aria-pressed="false">All websites</button></div>
+  <div class="panel-tabs" role="tablist" aria-label="Font settings"><button id="fonts-tab" role="tab" aria-selected="true" aria-controls="fonts-panel">Discover fonts <span id="font-count"></span></button><button id="tune-tab" role="tab" aria-selected="false" aria-controls="tune-panel">Fine-tune</button></div>
+  <main>
+    <section id="fonts-panel" role="tabpanel" aria-labelledby="fonts-tab">
+      <div class="search-box"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Find your next favorite font…" aria-label="Search fonts" autocomplete="off"></div>
+      <div class="categories" id="categories" aria-label="Font categories"></div>
+      <div class="font-list" id="font-list" role="list" aria-label="Font library"></div>
+    </section>
+    <section id="tune-panel" role="tabpanel" aria-labelledby="tune-tab" hidden>
+      <div class="slider-control"><label for="scale">Text size <output id="scale-value">100%</output></label><input id="scale" type="range" min="75" max="175" step="5" value="100"><div class="range-labels"><span>Smaller</span><span>Keep the page’s hierarchy</span><span>Larger</span></div></div>
+      <div class="line-control"><label for="line-height">Line height</label><select id="line-height"><option value="0">Website default</option value="1.2">Compact · 1.2</option><option value="1.4">Comfortable · 1.4</option><option value="1.6">Relaxed · 1.6</option><option value="1.8">Airy · 1.8</option><option value="2">Spacious · 2.0</option><option value="2.5">Extra spacious · 2.5</option></select></div>
+      <div class="spacing-grid"><div class="slider-control"><label for="letter-spacing">Letter spacing <output id="letter-spacing-value">Original</output></label><input id="letter-spacing" type="range" min="0" max="20" step="1" value="0"></div><div class="slider-control"><label for="word-spacing">Word spacing <output id="word-spacing-value">Original</output></label><input id="word-spacing" type="range" min="0" max="50" step="5" value="0"></div></div>
+      <div class="line-control"><label for="target">Change fonts in</label><select id="target"><option value="all">All page text</option><option value="reading">Reading content</option></select></div>
+      <label class="switch code-switch"><input type="checkbox" id="preserve-code" checked>Keep code in its original font</label>
+      <div class="custom-font"><label for="custom-font">Have a font of your own?</label><div><input type="text" id="custom-font" maxlength="80" placeholder="Installed font name, e.g. Aptos"><button id="use-custom">Use font</button></div><span class="small muted">Use the exact family name of a font installed on this device.</span></div>
+      <button id="reset-tuning" class="text-button">Reset spacing &amp; size</button>
+    </section>
+  </main>
+  <footer>
+    <div class="preview-line"><label class="switch"><input type="checkbox" id="live-preview" checked>Live preview on page</label><button class="text-button" id="original" aria-pressed="false">Use original</button></div>
+    <button class="primary" id="save" disabled><span id="save-label">Apply to this website</span><span aria-hidden="true">↗</span></button>
+    <div class="footer-bottom"><span class="message" id="message" role="status" aria-live="polite">Your fonts. Your little corner of the web.</span><button id="manage" class="text-button">Preferences</button></div>
+  </footer>
+  <script src="../shared/catalog.js"></script><script src="../shared/model.js"></script><script src="popup.js"></script>
+</body></html>

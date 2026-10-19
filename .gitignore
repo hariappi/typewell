@@ -1,0 +1,16 @@
+node_modules/
+dist/
+test-results/
+.DS_Store
+web-ext-artifacts/
+
+# Keep local configuration and publisher dashboard captures out of Git.
+.env
+.env.*
+!.env.example
+/store/chrome/submission-status.png
+/store/chrome/typewell-privacy-site.zip
+
+# This prepared HTML is the privacy site's source, despite its folder name.
+!store/chrome/privacy-site/dist/
+!store/chrome/privacy-site/dist/index.html

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Typewell · Your preferences</title><script src="../shared/compat.js"></script><script src="../ui/theme.js"></script><link rel="stylesheet" href="../ui/base.css"><link rel="stylesheet" href="options.css"></head>
+<body>
+  <div class="layout">
+    <aside>
+      <a class="brand" href="#overview"><img src="../icons/typewell.svg" alt=""><div><span class="brand-name">Typewell.</span><span class="brand-note">Make the web your type.</span></div></a>
+      <nav aria-label="Preferences sections"><a href="#overview" class="nav-current"><span aria-hidden="true">◈</span>Your preferences</a><a href="#websites"><span aria-hidden="true">◎</span>Your websites</a><a href="#backup"><span aria-hidden="true">↓</span>Backup &amp; restore</a><a href="#about"><span aria-hidden="true">Aa</span>About Typewell</a></nav>
+      <div class="sidebar-bottom"><span class="pill"><span class="dot"></span>Entirely yours</span><p>No accounts. No tracking.<br>Just a more comfortable web.</p><span class="version" id="extension-version">TYPEWELL</span></div>
+    </aside>
+    <main>
+      <header id="overview"><div class="eyebrow">A WEB THAT FEELS LIKE HOME</div><h1>A little more you.<br><em>Everywhere you read.</em></h1><p class="intro">Your favorite typefaces. A little room to breathe.<br>Make yourself comfortable.</p><div class="header-glyph" aria-hidden="true">Ag</div></header>
+      <div class="stat-row"><div><strong id="total-fonts">159</strong><span>font choices</span></div><div><strong id="total-sites">0</strong><span>website rules</span></div><div><strong>100<span class="percent">%</span></strong><span>local &amp; private</span></div></div>
+      <section class="section">
+        <div class="section-heading"><h2>The everyday essentials</h2><span class="eyebrow">01 / DEFAULTS</span></div>
+        <div class="card status-card"><div><h3 id="enabled-title">Typewell is on</h3><p id="enabled-detail">Your saved choices follow you as you browse.</p></div><label class="toggle"><input type="checkbox" id="enabled" checked aria-label="Enable Typewell"><span class="toggle-track"></span></label></div>
+        <div class="card appearance-card"><div><h3>Typewell appearance</h3><p>Choose how the popup and this Preferences page look.</p></div><div class="theme-choices" role="group" aria-label="Typewell appearance"><button data-theme-choice="system" aria-pressed="true">System</button><button data-theme-choice="light" aria-pressed="false">Light</button><button data-theme-choice="dark" aria-pressed="false">Dark</button></div></div>
+        <div class="card default-card"><div class="default-glyph" id="global-glyph" aria-hidden="true">Aa</div><div class="default-details"><div class="eyebrow">YOUR DEFAULT FONT</div><h3 id="global-name">Website original</h3><p id="global-detail">Choose “All websites” in the toolbar to set a default.</p></div><button id="clear-global" class="secondary" hidden>Clear default</button></div>
+        <p class="section-note">Each website can have its own look. Those choices always take priority over your default.</p>
+      </section>
+      <section class="section" id="websites">
+        <div class="section-heading"><h2>Your websites</h2><span class="eyebrow">02 / LITTLE PERSONAL TOUCHES</span></div>
+        <div class="card websites-card"><div class="websites-toolbar"><label for="site-search">A look for every corner of the web.</label><input type="search" id="site-search" placeholder="Find a website…" aria-label="Search saved websites"></div><div id="site-list"></div></div>
+        <p class="section-note">Rules match the exact hostname, including subdomains. Removing a rule lets the website use your global default.</p>
+      </section>
+      <section class="section" id="backup">
+        <div class="section-heading"><h2>Take your taste with you</h2><span class="eyebrow">03 / BACKUP &amp; RESTORE</span></div>
+        <div class="card backup-card"><div class="backup-icon" aria-hidden="true">↗</div><div><h3>A small file. All your favorites.</h3><p>Save your fonts, spacing, favorites, and website choices.<br>Restore them here whenever you need a fresh start.</p><div class="backup-actions"><button id="export" class="primary">Export settings <span aria-hidden="true">↓</span></button><button id="import" class="secondary">Import a backup</button><input id="import-file" type="file" accept="application/json,.json" hidden></div></div></div>
+      </section>
+      <section class="section about" id="about"><div class="section-heading"><h2>Good type. A quieter web.</h2><span class="eyebrow">MADE FOR READING</span></div><div class="about-grid"><div><span aria-hidden="true">◉</span><h3>At home, even offline.</h3><p id="font-description">147 open-source fonts travel with Typewell. No font services, no requests as you browse.</p></div><div><span aria-hidden="true">◇</span><h3>Your browsing stays yours.</h3><p>Settings stay in this browser profile. No analytics, accounts, or cloud sync.</p></div><div><span aria-hidden="true">⌘</span><h3>One small shortcut.</h3><p>Press <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> to open your font picker. On Mac, use Option.</p></div></div><p class="limitations">Your browser protects internal pages, its built-in PDF viewer, and extension stores. Typewell works on ordinary HTTP and HTTPS pages. Bundled fonts contain Latin characters; other scripts use the website or system fallback. Common icon fonts, code, and rich text editors are preserved by default.</p><a href="../fonts/sources.json" target="_blank" rel="noreferrer">Font sources &amp; licenses ↗</a></section>
+      <footer>Make the web your type. <span>Typewell</span></footer>
+    </main>
+  </div>
+  <div id="message" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="import-dialog" aria-labelledby="import-title"><h2 id="import-title">Bring your preferences home.</h2><p id="import-summary"></p><p>This replaces your current settings, website rules, and favorites. Export a backup first if you want to keep them.</p><div class="dialog-actions"><button id="cancel-import" class="secondary">Cancel</button><button id="confirm-import" class="primary">Replace settings</button></div></dialog>
+  <script src="../shared/catalog.js"></script><script src="../shared/model.js"></script><script src="options.js"></script>
+</body></html>

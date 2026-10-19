@@ -1,0 +1,147 @@
+@font-face { font-family: "Typewell Inter"; src: url("../fonts/inter.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell DM Sans"; src: url("../fonts/dm-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Manrope"; src: url("../fonts/manrope.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Geist"; src: url("../fonts/geist.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Plus Jakarta Sans"; src: url("../fonts/plus-jakarta-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Outfit"; src: url("../fonts/outfit.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Poppins"; src: url("../fonts/poppins.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Roboto"; src: url("../fonts/roboto.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Open Sans"; src: url("../fonts/open-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Lato"; src: url("../fonts/lato.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Montserrat"; src: url("../fonts/montserrat.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Nunito"; src: url("../fonts/nunito.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Nunito Sans"; src: url("../fonts/nunito-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Raleway"; src: url("../fonts/raleway.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Work Sans"; src: url("../fonts/work-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Rubik"; src: url("../fonts/rubik.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Ubuntu"; src: url("../fonts/ubuntu.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Figtree"; src: url("../fonts/figtree.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Karla"; src: url("../fonts/karla.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Mulish"; src: url("../fonts/mulish.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Barlow"; src: url("../fonts/barlow.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cabin"; src: url("../fonts/cabin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Quicksand"; src: url("../fonts/quicksand.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Comfortaa"; src: url("../fonts/comfortaa.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Jost"; src: url("../fonts/jost.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Urbanist"; src: url("../fonts/urbanist.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Space Grotesk"; src: url("../fonts/space-grotesk.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Sora"; src: url("../fonts/sora.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Public Sans"; src: url("../fonts/public-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Red Hat Display"; src: url("../fonts/red-hat-display.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Red Hat Text"; src: url("../fonts/red-hat-text.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell IBM Plex Sans"; src: url("../fonts/ibm-plex-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Source Sans 3"; src: url("../fonts/source-sans-3.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Noto Sans"; src: url("../fonts/noto-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell PT Sans"; src: url("../fonts/pt-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Fira Sans"; src: url("../fonts/fira-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Exo 2"; src: url("../fonts/exo-2.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Rajdhani"; src: url("../fonts/rajdhani.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Titillium Web"; src: url("../fonts/titillium-web.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Josefin Sans"; src: url("../fonts/josefin-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Archivo"; src: url("../fonts/archivo.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Asap"; src: url("../fonts/asap.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Assistant"; src: url("../fonts/assistant.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Overpass"; src: url("../fonts/overpass.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Oxygen"; src: url("../fonts/oxygen.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Questrial"; src: url("../fonts/questrial.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Signika"; src: url("../fonts/signika.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Varela Round"; src: url("../fonts/varela-round.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Yantramanav"; src: url("../fonts/yantramanav.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Hind"; src: url("../fonts/hind.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Heebo"; src: url("../fonts/heebo.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Vazirmatn"; src: url("../fonts/vazirmatn.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Albert Sans"; src: url("../fonts/albert-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Instrument Sans"; src: url("../fonts/instrument-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Schibsted Grotesk"; src: url("../fonts/schibsted-grotesk.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Epilogue"; src: url("../fonts/epilogue.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Onest"; src: url("../fonts/onest.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Gabarito"; src: url("../fonts/gabarito.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Maven Pro"; src: url("../fonts/maven-pro.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Kanit"; src: url("../fonts/kanit.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Prompt"; src: url("../fonts/prompt.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Roboto Condensed"; src: url("../fonts/roboto-condensed.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Lora"; src: url("../fonts/lora.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Literata"; src: url("../fonts/literata.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Merriweather"; src: url("../fonts/merriweather.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Source Serif 4"; src: url("../fonts/source-serif-4.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell DM Serif Display"; src: url("../fonts/dm-serif-display.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Playfair Display"; src: url("../fonts/playfair-display.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Libre Baskerville"; src: url("../fonts/libre-baskerville.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Crimson Pro"; src: url("../fonts/crimson-pro.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cormorant Garamond"; src: url("../fonts/cormorant-garamond.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell EB Garamond"; src: url("../fonts/eb-garamond.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bitter"; src: url("../fonts/bitter.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell PT Serif"; src: url("../fonts/pt-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Noto Serif"; src: url("../fonts/noto-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell IBM Plex Serif"; src: url("../fonts/ibm-plex-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Spectral"; src: url("../fonts/spectral.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Newsreader"; src: url("../fonts/newsreader.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Vollkorn"; src: url("../fonts/vollkorn.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Alegreya"; src: url("../fonts/alegreya.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cardo"; src: url("../fonts/cardo.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bree Serif"; src: url("../fonts/bree-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Domine"; src: url("../fonts/domine.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Arvo"; src: url("../fonts/arvo.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Zilla Slab"; src: url("../fonts/zilla-slab.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Roboto Slab"; src: url("../fonts/roboto-slab.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Fraunces"; src: url("../fonts/fraunces.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bodoni Moda"; src: url("../fonts/bodoni-moda.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Gelasio"; src: url("../fonts/gelasio.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Gentium Book Plus"; src: url("../fonts/gentium-book-plus.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cormorant"; src: url("../fonts/cormorant.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Libre Caslon Text"; src: url("../fonts/libre-caslon-text.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Noto Serif Display"; src: url("../fonts/noto-serif-display.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Young Serif"; src: url("../fonts/young-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Prata"; src: url("../fonts/prata.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell JetBrains Mono"; src: url("../fonts/jetbrains-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Fira Code"; src: url("../fonts/fira-code.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Source Code Pro"; src: url("../fonts/source-code-pro.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell IBM Plex Mono"; src: url("../fonts/ibm-plex-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Roboto Mono"; src: url("../fonts/roboto-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Space Mono"; src: url("../fonts/space-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Ubuntu Mono"; src: url("../fonts/ubuntu-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Inconsolata"; src: url("../fonts/inconsolata.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cousine"; src: url("../fonts/cousine.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell DM Mono"; src: url("../fonts/dm-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Azeret Mono"; src: url("../fonts/azeret-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Geist Mono"; src: url("../fonts/geist-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Martian Mono"; src: url("../fonts/martian-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Noto Sans Mono"; src: url("../fonts/noto-sans-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Victor Mono"; src: url("../fonts/victor-mono.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bebas Neue"; src: url("../fonts/bebas-neue.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Oswald"; src: url("../fonts/oswald.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Anton"; src: url("../fonts/anton.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Abril Fatface"; src: url("../fonts/abril-fatface.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Righteous"; src: url("../fonts/righteous.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Lobster"; src: url("../fonts/lobster.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Pacifico"; src: url("../fonts/pacifico.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Alfa Slab One"; src: url("../fonts/alfa-slab-one.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Cinzel"; src: url("../fonts/cinzel.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Limelight"; src: url("../fonts/limelight.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Press Start 2P"; src: url("../fonts/press-start-2p.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell VT323"; src: url("../fonts/vt323.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Silkscreen"; src: url("../fonts/silkscreen.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bungee"; src: url("../fonts/bungee.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Unbounded"; src: url("../fonts/unbounded.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Syne"; src: url("../fonts/syne.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Bowlby One"; src: url("../fonts/bowlby-one.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Caveat"; src: url("../fonts/caveat.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Dancing Script"; src: url("../fonts/dancing-script.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Indie Flower"; src: url("../fonts/indie-flower.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Patrick Hand"; src: url("../fonts/patrick-hand.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Kalam"; src: url("../fonts/kalam.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Shadows Into Light"; src: url("../fonts/shadows-into-light.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Architects Daughter"; src: url("../fonts/architects-daughter.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Handlee"; src: url("../fonts/handlee.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Sacramento"; src: url("../fonts/sacramento.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Satisfy"; src: url("../fonts/satisfy.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Borel"; src: url("../fonts/borel.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Homemade Apple"; src: url("../fonts/homemade-apple.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Gloria Hallelujah"; src: url("../fonts/gloria-hallelujah.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Atkinson Hyperlegible Next"; src: url("../fonts/atkinson-hyperlegible-next.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Lexend"; src: url("../fonts/lexend.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell OpenDyslexic"; src: url("../fonts/opendyslexic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Inclusive Sans"; src: url("../fonts/inclusive-sans.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Typewell Readex Pro"; src: url("../fonts/readex-pro.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }

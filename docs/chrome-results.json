@@ -1,0 +1,27 @@
+{
+  "browser": "chrome",
+  "browserLabel": "Chrome for Testing",
+  "version": "155.0.8059.84",
+  "binary": "/private/tmp/typewell-selenium/chrome/mac-arm64/155.0.8059.84/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "extensionVersion": "1.2.3",
+  "generatedAt": "2026-10-19T14:55:16.475Z",
+  "extensionURL": "chrome-extension://bicbllpchpiahbiimccgaknomkadenia",
+  "checks": [
+    "Chromium Manifest V3 worker, preferences, private browsing policy and all bundled fonts load",
+    "preferences follow system appearance and save explicit light and dark choices",
+    "fresh installation leaves pages unchanged",
+    "site font overrides author important rules and loads under restrictive font CSP",
+    "headings and emphasis retain formatting while code, editors and icons are protected",
+    "cross-origin frames, open shadow roots and dynamically inserted prose use the site font",
+    "Notion editor leaves receive the font while ordinary editors stay protected",
+    "readability scaling preserves hierarchy, protected glyphs and dynamic code alignment",
+    "global defaults respect exact site rules, exclusions, reading mode and explicit code styling",
+    "real runtime preview ports restore saved styling on disconnect",
+    "pause restores original metrics and removes styling markers; resume survives navigation",
+    "settings UI removes rules and validates backups before confirmed import",
+    "actual action popup detects the website, searches, previews, favorites and applies tuning",
+    "closing an actual popup restores its unsaved font and original-font previews",
+    "Apply persists the original-font selection after the action popup closes",
+    "saved settings and CSS updates survive a stopped and restarted Manifest V3 service worker"
+  ]
+}

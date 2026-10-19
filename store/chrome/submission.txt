@@ -1,0 +1,118 @@
+TYPEWELL — CHROME WEB STORE SUBMISSION REFERENCE
+Prepared October 19, 2026 for the Chromium build, version 1.2.3.
+
+This is copy to use in the submission form, not a record of publication or approval.
+The description, privacy values, Accessibility category, English (United
+States) language, and reviewer instructions were saved in the current web
+draft. The reviewer page confirmed its instructions were saved October 19, 2026.
+The 128x128 Typewell icon and one screenshot are present in the saved draft.
+The screenshot requirement no longer appears in the portal blocker dialog.
+
+LAST OBSERVED PORTAL STATE — OCTOBER 19, 2026
+The latest user-provided screenshot shows the broad-host-permissions review
+warning with "Submit for review" available. It does not confirm that the final
+submission was completed or approved. Check the developer dashboard for current
+status. The user selected typewell.support18@proton.me for the publisher contact;
+the final saved contact and privacy fields were not independently read back.
+
+NAME
+Typewell — Font Changer
+
+CATEGORY (RECOMMENDED)
+Accessibility
+
+LANGUAGE
+English (United States)
+
+SUPPORT EMAIL
+typewell.support18@proton.me
+
+DETAILED DESCRIPTION
+Make websites more comfortable to read. Typewell lets you preview fonts directly on a page, adjust text size and spacing, and remember your choices for the next visit.
+
+FIND YOUR TYPE
+• Choose from 147 bundled fonts and 12 system-font options, or use a font installed on your computer.
+• Search by name, browse categories, and save your favorites.
+• Preview fonts on the current website before applying them.
+• Closing the popup restores your saved choice.
+
+PERSONALIZE EACH WEBSITE
+• Save a different font and spacing profile for each website, or choose a default for all websites.
+• Adjust text size from 75% to 175%, line height, letter spacing, and word spacing.
+• Limit changes to reading content and preserve code fonts.
+• Restore original fonts, exclude individual websites, or pause Typewell everywhere.
+• Manage website rules and export or import your preferences as a local JSON file.
+• Choose a light, dark, or system interface theme.
+
+FONTS AND SETTINGS STAY LOCAL
+Bundled fonts are included with the extension, so browsing does not require font-service or CDN requests. Typewell has no accounts, analytics, advertisements, telemetry, or remote code.
+
+Typewell examines page elements, text, and styles locally to apply your chosen typography and preserve common icons. It uses the current website address to select the right profile. Saved website hostnames, font choices, favorites, and other preferences remain in this browser profile. Page text is not saved in your preferences, and Typewell does not send it or your settings to a server.
+
+WEBSITE ACCESS
+Access to HTTP and HTTPS websites allows Typewell to apply saved choices automatically on future visits, style newly loaded content, and handle permitted embedded frames. The activeTab and scripting permissions support live previews and applying or removing styles. The storage permission saves preferences locally.
+
+COMPATIBILITY
+For desktop Chrome and compatible Chromium browsers, including Brave. Incognito and private windows are not supported. Browser-protected pages, the Chrome Web Store, and some built-in viewers cannot be changed.
+
+Bundled fonts cover Latin text in regular weight; your browser may synthesize bold and italic. Other scripts and missing characters use fallback fonts. System and custom fonts must be installed locally. Some website layouts or unusual icons may work best with their original fonts. Canvas text and closed shadow roots cannot be changed.
+
+SINGLE PURPOSE
+Typewell lets users personalize website typography for comfortable reading by previewing and applying local fonts, adjusting text size and spacing, and saving a font profile for each website or a default for all websites.
+
+STORAGE PERMISSION JUSTIFICATION
+Typewell uses chrome.storage.local to save the user's enabled state, interface theme, default font profile, website-specific font profiles and exclusions, and favorite fonts. These preferences remain in the current browser profile. Typewell does not use storage.sync or send the settings to a server. Users can manage website rules and explicitly export or import a local JSON backup.
+
+ACTIVETAB PERMISSION JUSTIFICATION
+When the user opens Typewell on a website, activeTab allows the extension to identify the current tab and website, preview the selected font, and apply or restore typography on that page. The current website address is used locally to associate the preview and saved settings with the correct hostname. It is not transmitted to a server.
+
+SCRIPTING PERMISSION JUSTIFICATION
+Typewell uses chrome.scripting.insertCSS and removeCSS to apply and remove the user's selected font and spacing styles in website frames. It uses executeScript to initialize its packaged page engine on an already-open website when needed. This enables immediate previews and restores the previous styling when a preview ends. All injected scripts are included in the extension package.
+
+HOST PERMISSION JUSTIFICATION
+Typewell needs access to HTTP and HTTPS websites because users can choose a font profile for any website or a default that applies across websites. Persistent access lets the extension apply saved typography automatically on future visits, update newly loaded page content, and style permitted embedded frames without requiring the popup to be opened each time. Page elements, text, styles, and the current hostname are processed locally for this purpose. Page text is not saved or sent to a server.
+
+REMOTE CODE
+Select: No, I am not using remote code.
+
+If an explanation is requested:
+All executable JavaScript and CSS are packaged with the extension. Typewell does not load or execute remote code. Bundled fonts are loaded from the installed extension, and system or custom fonts are resolved locally. No font CDN requests occur during normal use.
+
+DATA USAGE
+Select: Web history and Website content.
+
+Web history: Typewell reads the current tab URL to identify the website and stores website hostnames only when the user saves a website profile or exclusion. These data remain in the browser profile and are not transmitted to the developer or another server.
+
+Website content: Typewell examines page elements, text, and computed styles locally to apply typography and preserve common icons. Page text is not saved in extension settings or transmitted to the developer or another server.
+
+Other data categories are not used by the extension for a separate data-collection purpose. It does not sell or transfer user data, use it for unrelated purposes, or use it for creditworthiness or lending. Confirm the current portal's limited-use certification wording against those facts.
+
+Why these disclosures are included: the Chrome Web Store User Data FAQ requires disclosure of local-only processing and storage, and identifies domains and URLs as web browsing activity. The category choices above reflect that guidance and the verified implementation; they do not mean Typewell sends browsing data to a server.
+
+PRIVACY POLICY URL
+https://typewell-privacy.pages.dev/
+Published on Cloudflare Pages and verified in Brave without sign-in on October 19, 2026. The final saved Chrome Web Store field value was not independently read back.
+
+The prepared page is also available as typewell-privacy-site.zip, with index.html at the archive root. The same policy is now deployed at the public URL above. See privacy-site/deployment.json for the deployment record.
+
+REVIEWER TEST INSTRUCTIONS
+No account, login, payment, or special setup is required. Open a normal HTTP/HTTPS page, then open Typewell from the toolbar. Select a font with live preview enabled. Close the popup to restore the saved choice. Reopen it and choose "Apply to this website"; reload to confirm persistence. Use "Fine-tune" for text size and spacing. "Use original" plus Apply restores site fonts. Preferences contains website rules and local backup controls. Internal/store pages and incognito are unsupported.
+
+This text is 492 characters and fits the portal's 500-character limit. Leave
+username and password blank; the extension requires no credentials.
+
+VERIFIED SOURCE REFERENCES
+dist/chromium/manifest.json
+extension/shared/catalog.js
+extension/background.js
+extension/content/engine.js
+extension/popup/popup.html
+extension/popup/popup.js
+extension/options/options.html
+extension/options/options.js
+PRIVACY.md
+
+OFFICIAL CHROME WEB STORE GUIDANCE
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy
+https://developer.chrome.com/docs/webstore/program-policies/user-data-faq
+https://developer.chrome.com/docs/webstore/program-policies/privacy

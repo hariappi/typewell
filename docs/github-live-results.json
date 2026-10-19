@@ -1,0 +1,54 @@
+{
+  "url": "https://github.com/thinking-machines-lab/tinker/blob/main/pyproject.toml",
+  "firefox": "158.0",
+  "original": [
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "[project]"
+    },
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "name = \"tinker\""
+    },
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "version = \"0.34.0\""
+    }
+  ],
+  "styled": [
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "[project]"
+    },
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "name = \"tinker\""
+    },
+    {
+      "family": "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace",
+      "letter": "normal",
+      "line": "20px",
+      "size": "12px",
+      "text": "version = \"0.34.0\""
+    }
+  ],
+  "proseFont": "Typewell Lora",
+  "scale": 125,
+  "lineHeight": 1.6,
+  "letterSpacing": 0.03
+}

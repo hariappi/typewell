@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An original reading sample about finding a comfortable rhythm on the web.">
+  <title>The quiet web — A reading sample</title>
+  <style>
+    :root { color-scheme: light; --paper: #f8f7f1; --ink: #233c31; --muted: #667568; --line: #d7dfcf; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+    .masthead {
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+      width: min(1180px, calc(100% - 4rem)); margin-inline: auto; padding-block: 1.6rem; border-bottom: 1px solid var(--line);
+      font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .publication { font-weight: 700; font-size: 15px; letter-spacing: .14em; }
+    .sample { color: var(--muted); }
+    main { width: min(1180px, calc(100% - 4rem)); margin: 3rem auto 4rem; }
+    article { max-width: 600px; }
+    .kicker { margin: 0 0 1.15rem; font: 700 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .15em; text-transform: uppercase; color: #537357; }
+    h1 { margin: 0; font-size: clamp(40px, 4.3vw, 56px); font-weight: 400; line-height: 1.08; letter-spacing: -.045em; }
+    .standfirst { margin: 1.25rem 0 0; color: #53664f; font-size: 22px; line-height: 1.5; }
+    .rule { width: 3rem; height: 2px; margin-block: 1.75rem; background: #739365; }
+    p { margin: 0 0 1.2rem; font-size: 19px; line-height: 1.7; }
+    h2 { margin: 1.7rem 0 .55rem; font-size: 26px; font-weight: 400; line-height: 1.25; letter-spacing: -.025em; }
+    .closing { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; font-style: italic; }
+    @media (max-width: 45rem) {
+      .masthead { width: calc(100% - 3rem); padding-block: 1.25rem; }
+      .sample { max-width: 8rem; text-align: right; font-size: 11px; }
+      main { width: auto; max-width: none; margin: 2.25rem 1.5rem 3rem; }
+      .standfirst { font-size: 20px; }
+      p { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <span class="publication">THE QUIET WEB</span>
+    <span class="sample">An original reading sample</span>
+  </header>
+  <main>
+    <article aria-labelledby="article-title">
+      <p class="kicker">A note on everyday reading</p>
+      <h1 id="article-title">A little more room<br>for a good idea.</h1>
+      <p class="standfirst">The best reading space is one that lets you settle in, find your rhythm, and follow a thought.</p>
+      <div class="rule" aria-hidden="true"></div>
+      <p>Some pages invite us to linger. We read the first sentence, then the next, without noticing the shape of the letters or the space between the lines. The words have room to breathe.</p>
+      <p>A familiar typeface can make a page feel more like a well-loved book. A little extra space can give a long paragraph a gentler rhythm. Small choices change how the page feels.</p>
+      <h2>Make space for the words.</h2>
+      <p>There is no single right way to read. Choose a comfortable size, leave a little room between lines, and let your eyes find their own pace.</p>
+      <p class="closing">A quiet page. A curious mind. One thought at a time.</p>
+    </article>
+  </main>
+</body>
+</html>

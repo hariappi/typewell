@@ -1,0 +1,1472 @@
+{
+  "abril-fatface": {
+    "package": "@fontsource/abril-fatface",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/abril-fatface@5.3.0/files/abril-fatface-latin-400-normal.woff2",
+    "sha256": "edf7a1f3bc22e815ea426b102fa0493d20af482b242066e689a1263ebb2eeb68",
+    "license": "abril-fatface.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "albert-sans": {
+    "package": "@fontsource/albert-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/albert-sans@5.3.0/files/albert-sans-latin-400-normal.woff2",
+    "sha256": "59e53b4a6c96f13f12fa4db8fd163c4f7c5d304d8dc3f9eac6db7b67f429867f",
+    "license": "albert-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "alegreya": {
+    "package": "@fontsource/alegreya",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/alegreya@5.3.0/files/alegreya-latin-400-normal.woff2",
+    "sha256": "7cbcf38a5ef682a8b9e2ef4a330b31a08b33bf1ae08e338267c0d1292479c68a",
+    "license": "alegreya.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "alfa-slab-one": {
+    "package": "@fontsource/alfa-slab-one",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/alfa-slab-one@5.3.0/files/alfa-slab-one-latin-400-normal.woff2",
+    "sha256": "48a110c7fda81f9921a6437e1a813dcea56df5a9f52f778c7b2f2151e36e4f2c",
+    "license": "alfa-slab-one.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "anton": {
+    "package": "@fontsource/anton",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/anton@5.3.0/files/anton-latin-400-normal.woff2",
+    "sha256": "d0fa07ff63dd60cbc0e2f58e29c802dca2a5ae0276c999f59c6111ab7bbaec3b",
+    "license": "anton.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "architects-daughter": {
+    "package": "@fontsource/architects-daughter",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/architects-daughter@5.3.0/files/architects-daughter-latin-400-normal.woff2",
+    "sha256": "284a3c1856b253a681c180bf5328cae3b94d4aaab702f6385490ec4e1b449df3",
+    "license": "architects-daughter.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "archivo": {
+    "package": "@fontsource/archivo",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/archivo@5.3.0/files/archivo-latin-400-normal.woff2",
+    "sha256": "07f9160163da2ec0f6376ef9d27a2bb8163f98019ba798da4baafb154e30056e",
+    "license": "archivo.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "arvo": {
+    "package": "@fontsource/arvo",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/arvo@5.3.0/files/arvo-latin-400-normal.woff2",
+    "sha256": "b4eb4284188dcd4a4643d900bbe50b2d6b336afeb7c126eace219276b5d30521",
+    "license": "arvo.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "asap": {
+    "package": "@fontsource/asap",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/asap@5.3.0/files/asap-latin-400-normal.woff2",
+    "sha256": "ae28ffbd36f815b3e7e3f095fd8c13e5acfba9f1349b74260d5ed44ab75e0d43",
+    "license": "asap.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "assistant": {
+    "package": "@fontsource/assistant",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/assistant@5.3.0/files/assistant-latin-400-normal.woff2",
+    "sha256": "15905fd40bfde9d39d14a7faa8e48fb0d86198f432be318205fc82db68216009",
+    "license": "assistant.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "atkinson-hyperlegible": {
+    "package": "@fontsource/atkinson-hyperlegible",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/atkinson-hyperlegible@5.3.0/files/atkinson-hyperlegible-latin-400-normal.woff2",
+    "sha256": "d64ba838ef5472bba248620ec4fd8b5aa7cf0db2908e0bb230600caf279ba7bc",
+    "license": "atkinson-hyperlegible.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "atkinson-hyperlegible-next": {
+    "package": "@fontsource/atkinson-hyperlegible-next",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/atkinson-hyperlegible-next@5.3.0/files/atkinson-hyperlegible-next-latin-400-normal.woff2",
+    "sha256": "5cb240a4d99ab7e6fc3a4d4e6d11d89789fdffe9c86a8384000d662c53283f6f",
+    "license": "atkinson-hyperlegible-next.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "azeret-mono": {
+    "package": "@fontsource/azeret-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/azeret-mono@5.3.0/files/azeret-mono-latin-400-normal.woff2",
+    "sha256": "83f738bd44f3d7542f2adf6c78d2285b85c55fd349a44ded40f844fbcfbe1d81",
+    "license": "azeret-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "barlow": {
+    "package": "@fontsource/barlow",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-400-normal.woff2",
+    "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b",
+    "license": "barlow.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bebas-neue": {
+    "package": "@fontsource/bebas-neue",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bebas-neue@5.3.0/files/bebas-neue-latin-400-normal.woff2",
+    "sha256": "a7c90c89240c134f7fdd33d40c000ec90b79d675ea53e8cc5a6d423c073de412",
+    "license": "bebas-neue.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bitter": {
+    "package": "@fontsource/bitter",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bitter@5.3.0/files/bitter-latin-400-normal.woff2",
+    "sha256": "a9960fdb72f913dc0ccd67dbf6c520f720123bd1a4542cb05555e7ebb2dae42f",
+    "license": "bitter.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bodoni-moda": {
+    "package": "@fontsource/bodoni-moda",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bodoni-moda@5.3.0/files/bodoni-moda-latin-400-normal.woff2",
+    "sha256": "e2863d3bbe2e094f1ce98053ee3c6200cfa35f82b9f4cc6fd95fbaead4125d4f",
+    "license": "bodoni-moda.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "borel": {
+    "package": "@fontsource/borel",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/borel@5.3.0/files/borel-latin-400-normal.woff2",
+    "sha256": "1db622888380e5288596c743dff79ee041570359d78d7e5d1d24a016413746db",
+    "license": "borel.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bowlby-one": {
+    "package": "@fontsource/bowlby-one",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bowlby-one@5.3.0/files/bowlby-one-latin-400-normal.woff2",
+    "sha256": "e2f3c84b26df8512d2cda4a9595e278e67b3efc86c5866b0a89ac45a16625e35",
+    "license": "bowlby-one.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bree-serif": {
+    "package": "@fontsource/bree-serif",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bree-serif@5.3.0/files/bree-serif-latin-400-normal.woff2",
+    "sha256": "ca092b4130ee50797d9ba9790e5504ff66649cd7a144f2efe54147e313299e48",
+    "license": "bree-serif.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bricolage-grotesque": {
+    "package": "@fontsource/bricolage-grotesque",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bricolage-grotesque@5.3.0/files/bricolage-grotesque-latin-400-normal.woff2",
+    "sha256": "826772cb1251f09b4c9d76fc6266993d67b03507bee337ea2eac0fb3e0879de3",
+    "license": "bricolage-grotesque.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "bungee": {
+    "package": "@fontsource/bungee",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/bungee@5.3.0/files/bungee-latin-400-normal.woff2",
+    "sha256": "126eec706b7931682dbcf6c6efc274132c603f181fbf912678e6cfeb341e721b",
+    "license": "bungee.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cabin": {
+    "package": "@fontsource/cabin",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cabin@5.3.0/files/cabin-latin-400-normal.woff2",
+    "sha256": "77f442b8d11d3f4fad140744b15500493939a8be0542814ca9eb63164fbdfacd",
+    "license": "cabin.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cardo": {
+    "package": "@fontsource/cardo",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cardo@5.3.0/files/cardo-latin-400-normal.woff2",
+    "sha256": "ab263141cb65f2da12f079f3bc226eceff3c05fb48f6fe820b045d8b2094e09a",
+    "license": "cardo.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "caveat": {
+    "package": "@fontsource/caveat",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/caveat@5.3.0/files/caveat-latin-400-normal.woff2",
+    "sha256": "d0b7b931b8980049327e8f8f9ac264617c8200b8422d62e886473d3d9527bad3",
+    "license": "caveat.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cinzel": {
+    "package": "@fontsource/cinzel",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cinzel@5.3.0/files/cinzel-latin-400-normal.woff2",
+    "sha256": "b873cdd90d6bd9ca4793c805b4175abfae00b3611ee8afccf63067133dcf1217",
+    "license": "cinzel.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "comfortaa": {
+    "package": "@fontsource/comfortaa",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/comfortaa@5.3.0/files/comfortaa-latin-400-normal.woff2",
+    "sha256": "4e86e54d50483956c59a01b5b671b6807fa7235d94e5716cffc5cf390544b1bc",
+    "license": "comfortaa.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cormorant": {
+    "package": "@fontsource/cormorant",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cormorant@5.3.0/files/cormorant-latin-400-normal.woff2",
+    "sha256": "fe84953707646515f33e6b29bebe9db412176a0d61b8e521587667c086ceb139",
+    "license": "cormorant.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cormorant-garamond": {
+    "package": "@fontsource/cormorant-garamond",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5.3.0/files/cormorant-garamond-latin-400-normal.woff2",
+    "sha256": "8048ac209bec741e1c29cd0cfac5aac1c0c2ba8c3ddbd4a58fa9bd92ef5c63c2",
+    "license": "cormorant-garamond.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "cousine": {
+    "package": "@fontsource/cousine",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/cousine@5.3.0/files/cousine-latin-400-normal.woff2",
+    "sha256": "fb542bb367b20289e71b682dc45d8f01de5b0a0658464db9053801f30e7c13a8",
+    "license": "cousine.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "crimson-pro": {
+    "package": "@fontsource/crimson-pro",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/crimson-pro@5.3.0/files/crimson-pro-latin-400-normal.woff2",
+    "sha256": "d2a3a146387d91b8d476d508849dd1d93a3cbde85d1e0d303e3d5c970726a703",
+    "license": "crimson-pro.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "dancing-script": {
+    "package": "@fontsource/dancing-script",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/dancing-script@5.3.0/files/dancing-script-latin-400-normal.woff2",
+    "sha256": "570e4265bbcb453353ce2fdf63d179332d8daa92691d567547b8a383f3b46c3b",
+    "license": "dancing-script.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "dm-mono": {
+    "package": "@fontsource/dm-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/dm-mono@5.3.0/files/dm-mono-latin-400-normal.woff2",
+    "sha256": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e",
+    "license": "dm-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "dm-sans": {
+    "package": "@fontsource/dm-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/dm-sans@5.3.0/files/dm-sans-latin-400-normal.woff2",
+    "sha256": "4ab51eb2cd7305d177187908d6397474d4520663f6c6e572feb0a64f4fa80006",
+    "license": "dm-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "dm-serif-display": {
+    "package": "@fontsource/dm-serif-display",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/dm-serif-display@5.3.0/files/dm-serif-display-latin-400-normal.woff2",
+    "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a",
+    "license": "dm-serif-display.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "domine": {
+    "package": "@fontsource/domine",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/domine@5.3.0/files/domine-latin-400-normal.woff2",
+    "sha256": "5b6092accc937c403b332920e807630d1bc4b9ec6e5a0ebf62beab962a0cb620",
+    "license": "domine.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "eb-garamond": {
+    "package": "@fontsource/eb-garamond",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/eb-garamond@5.3.0/files/eb-garamond-latin-400-normal.woff2",
+    "sha256": "912929dba0faab5e151849ea5e988adba3080ad6d2bcc4dbff27aa427896498d",
+    "license": "eb-garamond.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "epilogue": {
+    "package": "@fontsource/epilogue",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/epilogue@5.3.0/files/epilogue-latin-400-normal.woff2",
+    "sha256": "0af87aa515adb067ff9bb75a0086748d8f16b4a3d20cdfd27c069be07193e484",
+    "license": "epilogue.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "exo-2": {
+    "package": "@fontsource/exo-2",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/exo-2@5.3.0/files/exo-2-latin-400-normal.woff2",
+    "sha256": "49c9cd329161f5c5feed3ae80a788199f2dce127c00828e027a61261cf602491",
+    "license": "exo-2.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "figtree": {
+    "package": "@fontsource/figtree",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/figtree@5.3.0/files/figtree-latin-400-normal.woff2",
+    "sha256": "8f98dd642986f1fa39c45b89665a57372897c235b36028e0e4a136e43dc5f8ab",
+    "license": "figtree.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "fira-code": {
+    "package": "@fontsource/fira-code",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/fira-code@5.3.0/files/fira-code-latin-400-normal.woff2",
+    "sha256": "6dc9da171ccea71d525379ee1cbf51d143e31acac330a251bb71b3d6060e687c",
+    "license": "fira-code.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "fira-sans": {
+    "package": "@fontsource/fira-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@5.3.0/files/fira-sans-latin-400-normal.woff2",
+    "sha256": "3e38d8c01fe97529fbf0a086bf958d724b723ca7fc8be77b4ba5745f6259b6ca",
+    "license": "fira-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "fraunces": {
+    "package": "@fontsource/fraunces",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/fraunces@5.3.0/files/fraunces-latin-400-normal.woff2",
+    "sha256": "e558f39453a9c611908be04294b50dea5f21ae6c49b41c6e47f4115e91f90209",
+    "license": "fraunces.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "gabarito": {
+    "package": "@fontsource/gabarito",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/gabarito@5.3.0/files/gabarito-latin-400-normal.woff2",
+    "sha256": "3b8ca9bc042daa5e5f793d24181ca866d7b9738e3e77c2867f4eca5d2ec50bc2",
+    "license": "gabarito.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "geist": {
+    "package": "@fontsource/geist",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/geist@5.3.0/files/geist-latin-400-normal.woff2",
+    "sha256": "ead637fd0b6b887d829b3ce3f25fdc242b1de0cfb69c0d97987933675d1315ba",
+    "license": "geist.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "geist-mono": {
+    "package": "@fontsource/geist-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5.3.0/files/geist-mono-latin-400-normal.woff2",
+    "sha256": "3f98383b122fe015a48536cd4a1cda855a201718923ffe74931a01597107b9b5",
+    "license": "geist-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "gelasio": {
+    "package": "@fontsource/gelasio",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/gelasio@5.3.0/files/gelasio-latin-400-normal.woff2",
+    "sha256": "68e2b704c5624ba84e70d826e33c5fc08d75eb452f834d869abdecc39f3b26ac",
+    "license": "gelasio.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "gentium-book-plus": {
+    "package": "@fontsource/gentium-book-plus",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/gentium-book-plus@5.3.0/files/gentium-book-plus-latin-400-normal.woff2",
+    "sha256": "dd5d2902dac9c11d3acc42b0e54a74b4f2db9bd4a7d6872c23338f70df29ca7e",
+    "license": "gentium-book-plus.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "gloria-hallelujah": {
+    "package": "@fontsource/gloria-hallelujah",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/gloria-hallelujah@5.3.0/files/gloria-hallelujah-latin-400-normal.woff2",
+    "sha256": "90b0ef8d2ed6d4b46b4e010e7b335b182c45c330a15bac3ca76497dbae544700",
+    "license": "gloria-hallelujah.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "handlee": {
+    "package": "@fontsource/handlee",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/handlee@5.3.0/files/handlee-latin-400-normal.woff2",
+    "sha256": "d3807ea30015f5082c0a3e2b7803885310db888be091dbc86fecb1ca67f3c622",
+    "license": "handlee.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "heebo": {
+    "package": "@fontsource/heebo",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/heebo@5.3.0/files/heebo-latin-400-normal.woff2",
+    "sha256": "2fbe59e5561759450e111cff78825304c9278ec6ba5e808cbaff1c4a97dfa6fa",
+    "license": "heebo.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "hind": {
+    "package": "@fontsource/hind",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/hind@5.3.0/files/hind-latin-400-normal.woff2",
+    "sha256": "aca5dec430a7470ff1d8a16f9e7bb3ca30f2ff58f3bd60432cf1dddfa30c9d71",
+    "license": "hind.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "homemade-apple": {
+    "package": "@fontsource/homemade-apple",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/homemade-apple@5.3.0/files/homemade-apple-latin-400-normal.woff2",
+    "sha256": "bbaa96c741caa479d4647fc567f64e5ddc71eec58ee9849cb9e8a14bee65bc30",
+    "license": "homemade-apple.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "ibm-plex-mono": {
+    "package": "@fontsource/ibm-plex-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.3.0/files/ibm-plex-mono-latin-400-normal.woff2",
+    "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "license": "ibm-plex-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "ibm-plex-sans": {
+    "package": "@fontsource/ibm-plex-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.3.0/files/ibm-plex-sans-latin-400-normal.woff2",
+    "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e",
+    "license": "ibm-plex-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "ibm-plex-serif": {
+    "package": "@fontsource/ibm-plex-serif",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-serif@5.3.0/files/ibm-plex-serif-latin-400-normal.woff2",
+    "sha256": "cb2c5eee2c0a43ff30d2365407c7bc8b20e3bd90720a4a64102ba0b328022a02",
+    "license": "ibm-plex-serif.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "inclusive-sans": {
+    "package": "@fontsource/inclusive-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/inclusive-sans@5.3.0/files/inclusive-sans-latin-400-normal.woff2",
+    "sha256": "4d729e8132748faed12f3fb32222de54f73df5585c5c4a4de69d2122d64d2622",
+    "license": "inclusive-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "inconsolata": {
+    "package": "@fontsource/inconsolata",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/inconsolata@5.3.0/files/inconsolata-latin-400-normal.woff2",
+    "sha256": "9d5a0480d2bd3e43b124bf8f36782c8fc079f9f8b023c672bff67e9ceffc236b",
+    "license": "inconsolata.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "indie-flower": {
+    "package": "@fontsource/indie-flower",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/indie-flower@5.3.0/files/indie-flower-latin-400-normal.woff2",
+    "sha256": "cb57752edc96294323252e8d84fa25f975943b2ef3e87b2c984b15ca935d7657",
+    "license": "indie-flower.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "instrument-sans": {
+    "package": "@fontsource/instrument-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/instrument-sans@5.3.0/files/instrument-sans-latin-400-normal.woff2",
+    "sha256": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "license": "instrument-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "inter": {
+    "package": "@fontsource/inter",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.3.0/files/inter-latin-400-normal.woff2",
+    "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+    "license": "inter.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "jetbrains-mono": {
+    "package": "@fontsource/jetbrains-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-latin-400-normal.woff2",
+    "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+    "license": "jetbrains-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "josefin-sans": {
+    "package": "@fontsource/josefin-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/josefin-sans@5.3.0/files/josefin-sans-latin-400-normal.woff2",
+    "sha256": "242e98782313218a60ac5397a94a49bbe4cf3dbf4ca31039acacd801d957b13a",
+    "license": "josefin-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "jost": {
+    "package": "@fontsource/jost",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/jost@5.3.0/files/jost-latin-400-normal.woff2",
+    "sha256": "f94cffda16515fbb1667a2662d6b46f5610a942fd02fe88d67ff98f776288962",
+    "license": "jost.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "kalam": {
+    "package": "@fontsource/kalam",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/kalam@5.3.0/files/kalam-latin-400-normal.woff2",
+    "sha256": "954410601a823f37e219f7930b7446f86afa15621326a7078d56fb9c910135cb",
+    "license": "kalam.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "kanit": {
+    "package": "@fontsource/kanit",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/kanit@5.3.0/files/kanit-latin-400-normal.woff2",
+    "sha256": "1e856b3a04f93a23ec758ad37750f4dcfbde02334fd30358d02d5d4db3052bf2",
+    "license": "kanit.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "karla": {
+    "package": "@fontsource/karla",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/karla@5.3.0/files/karla-latin-400-normal.woff2",
+    "sha256": "250bb48fdea5ba354fa85161f3877121ef679c6f7a1ef3d8f173fb8979628906",
+    "license": "karla.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "lato": {
+    "package": "@fontsource/lato",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/lato@5.3.0/files/lato-latin-400-normal.woff2",
+    "sha256": "918b7dc3e2e2d015c16ce08b57bcb64d2253bafc1707658f361e72865498e537",
+    "license": "lato.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "lexend": {
+    "package": "@fontsource/lexend",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/lexend@5.3.0/files/lexend-latin-400-normal.woff2",
+    "sha256": "0601e0a909219a542cdd581e3f8f1ff8fb208978cbc9bca1c90df02fd8062bb1",
+    "license": "lexend.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "libre-baskerville": {
+    "package": "@fontsource/libre-baskerville",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/libre-baskerville@5.3.0/files/libre-baskerville-latin-400-normal.woff2",
+    "sha256": "3eb80fbca70498126925ce16ff5c20b2fa35e67ae7123ddb46302d2778dfbf0e",
+    "license": "libre-baskerville.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "libre-caslon-text": {
+    "package": "@fontsource/libre-caslon-text",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/libre-caslon-text@5.3.0/files/libre-caslon-text-latin-400-normal.woff2",
+    "sha256": "29310efc1007f608549e29ff78fa5ce8dffe0c1aa82c21b082d1de9dfc7334f0",
+    "license": "libre-caslon-text.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "limelight": {
+    "package": "@fontsource/limelight",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/limelight@5.3.0/files/limelight-latin-400-normal.woff2",
+    "sha256": "ba3e86ecc0e1ce145784f4eb7fb593af683e88568336ea2ae9c26a486ffe0dfc",
+    "license": "limelight.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "literata": {
+    "package": "@fontsource/literata",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/literata@5.3.0/files/literata-latin-400-normal.woff2",
+    "sha256": "a60c193b55766b68b922e2327e15c2d8c145532f283a27c3411b9c47a8583d18",
+    "license": "literata.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "lobster": {
+    "package": "@fontsource/lobster",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/lobster@5.3.0/files/lobster-latin-400-normal.woff2",
+    "sha256": "aed68c73817364906ff95d97be87246d106bd38d5e4397e4866ec831ee22f7ba",
+    "license": "lobster.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "lora": {
+    "package": "@fontsource/lora",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/lora@5.3.0/files/lora-latin-400-normal.woff2",
+    "sha256": "ac079950fd9885261c0f73d9e87233f31b5427333ce0eb20e26c119458493c40",
+    "license": "lora.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "manrope": {
+    "package": "@fontsource/manrope",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.3.0/files/manrope-latin-400-normal.woff2",
+    "sha256": "849290ef12a2eeb9af5c11924120d11aa4ae8b435ed3347d7fc8bc240c293ca3",
+    "license": "manrope.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "martian-mono": {
+    "package": "@fontsource/martian-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/martian-mono@5.3.0/files/martian-mono-latin-400-normal.woff2",
+    "sha256": "bb677c9c5cf5b384b5e4a1fd86755a47e0cbafe6bc70a9ba458b5e13e1d7a5c0",
+    "license": "martian-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "maven-pro": {
+    "package": "@fontsource/maven-pro",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/maven-pro@5.3.0/files/maven-pro-latin-400-normal.woff2",
+    "sha256": "a8b66cd692819d6b627b31d2fac6faf4634ba46a906ce65f3ec9ce89dbb942ec",
+    "license": "maven-pro.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "merriweather": {
+    "package": "@fontsource/merriweather",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/merriweather@5.3.0/files/merriweather-latin-400-normal.woff2",
+    "sha256": "66f5bd22d738a801a9e58d71920559743b0baaced04be299e3c4feca3dce3556",
+    "license": "merriweather.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "montserrat": {
+    "package": "@fontsource/montserrat",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.3.0/files/montserrat-latin-400-normal.woff2",
+    "sha256": "e66bcd2761ab6924b25ce70dafe10e57a39193c4fea1516730bd9cb5240af6c8",
+    "license": "montserrat.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "mulish": {
+    "package": "@fontsource/mulish",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/mulish@5.3.0/files/mulish-latin-400-normal.woff2",
+    "sha256": "95efc771d19900052b360dce91f4043b488b0df7335f7cabf0e03cb69b690027",
+    "license": "mulish.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "newsreader": {
+    "package": "@fontsource/newsreader",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/newsreader@5.3.0/files/newsreader-latin-400-normal.woff2",
+    "sha256": "e66067814f1c672d33a457e4f4d102c818b481420e2234cf685ebdbf2f443904",
+    "license": "newsreader.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "noto-sans": {
+    "package": "@fontsource/noto-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/noto-sans@5.3.0/files/noto-sans-latin-400-normal.woff2",
+    "sha256": "09aee8065d25508f23a4c3d92cd777ac869c52d93fd868a88f025d888a7937d6",
+    "license": "noto-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "noto-sans-mono": {
+    "package": "@fontsource/noto-sans-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-mono@5.3.0/files/noto-sans-mono-latin-400-normal.woff2",
+    "sha256": "1e4b885e90f8e794d33fff5095497e4ce847d8c5fa2b7810d1b10a770d0f8e34",
+    "license": "noto-sans-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "noto-serif": {
+    "package": "@fontsource/noto-serif",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/noto-serif@5.3.0/files/noto-serif-latin-400-normal.woff2",
+    "sha256": "4c0cbe3eec50d260754d681c17ee2af49a43d7fd93ce42877f665fcb1a889b87",
+    "license": "noto-serif.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "noto-serif-display": {
+    "package": "@fontsource/noto-serif-display",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-display@5.3.0/files/noto-serif-display-latin-400-normal.woff2",
+    "sha256": "c6319c298f6733178b391973cff931337653261ca41419f970b55087d44d905d",
+    "license": "noto-serif-display.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "nunito": {
+    "package": "@fontsource/nunito",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/nunito@5.3.0/files/nunito-latin-400-normal.woff2",
+    "sha256": "a5906e15ceb68f73d3b2c2076b4057c3f6ed401186d56283b45ce12944ca0735",
+    "license": "nunito.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "nunito-sans": {
+    "package": "@fontsource/nunito-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/nunito-sans@5.3.0/files/nunito-sans-latin-400-normal.woff2",
+    "sha256": "d9976dd1dc9c0d65046b52810e7cc69cfc229ee9939628ffe637e17efe4ef1ed",
+    "license": "nunito-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "onest": {
+    "package": "@fontsource/onest",
+    "version": "5.3.1",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/onest@5.3.1/files/onest-latin-400-normal.woff2",
+    "sha256": "93dfb945d217bb541c46e5cdef85bb86095009522fcede783215827e7ca14439",
+    "license": "onest.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "open-sans": {
+    "package": "@fontsource/open-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/open-sans@5.3.0/files/open-sans-latin-400-normal.woff2",
+    "sha256": "0e44026ad31376af1b56593cd4acb4f353f8e8789c51759e18f64578e4ef296a",
+    "license": "open-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "opendyslexic": {
+    "package": "@fontsource/opendyslexic",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.3.0/files/opendyslexic-latin-400-normal.woff2",
+    "sha256": "f007004af3cda5d8076e57c943f8cc8d00a0da25988b1ae1048683d60e7cac1a",
+    "license": "opendyslexic.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "oswald": {
+    "package": "@fontsource/oswald",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/oswald@5.3.0/files/oswald-latin-400-normal.woff2",
+    "sha256": "e902b779e43944c300cf8ae5e4a1affa68cb8a823fd263dd2f479c4cdfbd213c",
+    "license": "oswald.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "outfit": {
+    "package": "@fontsource/outfit",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/outfit@5.3.0/files/outfit-latin-400-normal.woff2",
+    "sha256": "71f028fd2349990b3f8aa643abe767e82e0f596be407ae66f0004ff164121bdb",
+    "license": "outfit.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "overpass": {
+    "package": "@fontsource/overpass",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/overpass@5.3.0/files/overpass-latin-400-normal.woff2",
+    "sha256": "f835f9c7e1266a33b93fe8865a1ddc8d40e7db6a80b494a4716cdebc72f973eb",
+    "license": "overpass.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "oxygen": {
+    "package": "@fontsource/oxygen",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/oxygen@5.3.0/files/oxygen-latin-400-normal.woff2",
+    "sha256": "cb77b974327584a478f8579490a5f118da52f1062e00b5ad31cb4dc5444efb37",
+    "license": "oxygen.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "pacifico": {
+    "package": "@fontsource/pacifico",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/pacifico@5.3.0/files/pacifico-latin-400-normal.woff2",
+    "sha256": "99ec044ad9040a708e38f90ebd5984ca03fc46afeee26d5c77c4769c66ed89e2",
+    "license": "pacifico.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "patrick-hand": {
+    "package": "@fontsource/patrick-hand",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/patrick-hand@5.3.0/files/patrick-hand-latin-400-normal.woff2",
+    "sha256": "ac5bc9033b2572bf84d39f7150c1634e37ed16e8dbee632d6d0bceac0bbf0199",
+    "license": "patrick-hand.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "playfair-display": {
+    "package": "@fontsource/playfair-display",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.3.0/files/playfair-display-latin-400-normal.woff2",
+    "sha256": "1fe9ad5d8b2ebd8ecb8fbd05bed1e3fdfa52dae3f1a04e1c219918442fe9394d",
+    "license": "playfair-display.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "plus-jakarta-sans": {
+    "package": "@fontsource/plus-jakarta-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans@5.3.0/files/plus-jakarta-sans-latin-400-normal.woff2",
+    "sha256": "221a4135d06a4b33abbd535e9a0da4e565d19545ddd9267c4e678a916d54d9b6",
+    "license": "plus-jakarta-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "poppins": {
+    "package": "@fontsource/poppins",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.3.0/files/poppins-latin-400-normal.woff2",
+    "sha256": "7d93459d86585bfcdbb7e0376056226adb25821ee54b96236fe2123e9560929f",
+    "license": "poppins.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "prata": {
+    "package": "@fontsource/prata",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/prata@5.3.0/files/prata-latin-400-normal.woff2",
+    "sha256": "1b85a8c794709747c9f689b791984c430a2d9716a5cf9440d955bd7d20dad9d0",
+    "license": "prata.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "press-start-2p": {
+    "package": "@fontsource/press-start-2p",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/press-start-2p@5.3.0/files/press-start-2p-latin-400-normal.woff2",
+    "sha256": "afec86997fdaf54af1f59358fa2c1e2a0f1d04146edad18e5cd141d0384a7548",
+    "license": "press-start-2p.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "prompt": {
+    "package": "@fontsource/prompt",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/prompt@5.3.0/files/prompt-latin-400-normal.woff2",
+    "sha256": "76f4b0e556e9bdcdcd9c839d20f5e3420a3ccca3f2d5da2f7beefb0e95a09bcb",
+    "license": "prompt.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "pt-sans": {
+    "package": "@fontsource/pt-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/pt-sans@5.3.0/files/pt-sans-latin-400-normal.woff2",
+    "sha256": "2dea6190c113af617923c6b71f7f10ffbdf72074556f79963610254fe40e49be",
+    "license": "pt-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "pt-serif": {
+    "package": "@fontsource/pt-serif",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/pt-serif@5.3.0/files/pt-serif-latin-400-normal.woff2",
+    "sha256": "4271064a37f3ffc0aac5f3806db8a72acc23e19447d1804e4e80d8796cbf6330",
+    "license": "pt-serif.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "public-sans": {
+    "package": "@fontsource/public-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/public-sans@5.3.0/files/public-sans-latin-400-normal.woff2",
+    "sha256": "36274b5787b4f03b27e65ae971d6c808a96838ccd60c9dabaee154889b6bba82",
+    "license": "public-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "questrial": {
+    "package": "@fontsource/questrial",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/questrial@5.3.0/files/questrial-latin-400-normal.woff2",
+    "sha256": "89ccc12b1889293597ece5fe971b0bc352464a9f7ca870e4f3b473f5940a2025",
+    "license": "questrial.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "quicksand": {
+    "package": "@fontsource/quicksand",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/quicksand@5.3.0/files/quicksand-latin-400-normal.woff2",
+    "sha256": "fee25690fddfdf52d7c88f8460260998c523b762e1a53fc91561b179835e3316",
+    "license": "quicksand.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "rajdhani": {
+    "package": "@fontsource/rajdhani",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/rajdhani@5.3.0/files/rajdhani-latin-400-normal.woff2",
+    "sha256": "759a9000e47b028799d7a4ca602634a7ac7adf415775df070a335d18d9b66f38",
+    "license": "rajdhani.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "raleway": {
+    "package": "@fontsource/raleway",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/raleway@5.3.0/files/raleway-latin-400-normal.woff2",
+    "sha256": "2318962e7930f55b45907ee85a6b6165ca3bba437b05ca17068a5c876d3de18b",
+    "license": "raleway.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "readex-pro": {
+    "package": "@fontsource/readex-pro",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/readex-pro@5.3.0/files/readex-pro-latin-400-normal.woff2",
+    "sha256": "e846a3aa9fd67bbc09e2ecef4e3f74577fae05053815636a21eb77d06533f062",
+    "license": "readex-pro.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "red-hat-display": {
+    "package": "@fontsource/red-hat-display",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/red-hat-display@5.3.0/files/red-hat-display-latin-400-normal.woff2",
+    "sha256": "131f293be2bb64d87a5ea2a90dadb934df94d976071e220dd685f2a036e5cf90",
+    "license": "red-hat-display.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "red-hat-text": {
+    "package": "@fontsource/red-hat-text",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/red-hat-text@5.3.0/files/red-hat-text-latin-400-normal.woff2",
+    "sha256": "65129f71694b5b1ffcf50f1c9ab27fc5fe36b496f5e7c183a7ae7ca73876552c",
+    "license": "red-hat-text.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "righteous": {
+    "package": "@fontsource/righteous",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/righteous@5.3.0/files/righteous-latin-400-normal.woff2",
+    "sha256": "17055c538efddf7a754a98bb7db3d15405316dfb4645c287421ed3e7f8769144",
+    "license": "righteous.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "roboto": {
+    "package": "@fontsource/roboto",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/files/roboto-latin-400-normal.woff2",
+    "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371",
+    "license": "roboto.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "roboto-condensed": {
+    "package": "@fontsource/roboto-condensed",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/files/roboto-condensed-latin-400-normal.woff2",
+    "sha256": "543c03fff71d1b39590af102e0852c2dbce46f4dbe4faaebafbef6edc82e78f5",
+    "license": "roboto-condensed.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "roboto-mono": {
+    "package": "@fontsource/roboto-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@5.3.0/files/roboto-mono-latin-400-normal.woff2",
+    "sha256": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9",
+    "license": "roboto-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "roboto-slab": {
+    "package": "@fontsource/roboto-slab",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/roboto-slab@5.3.0/files/roboto-slab-latin-400-normal.woff2",
+    "sha256": "484e9925bb3045e88a8eec1103ab125e6dbe486172fb56b06fe6751c8b570839",
+    "license": "roboto-slab.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "rubik": {
+    "package": "@fontsource/rubik",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/rubik@5.3.0/files/rubik-latin-400-normal.woff2",
+    "sha256": "82ac0e78285c43d0cd203427c57ab30fb07b18f8e6166045f729442eb1abfa26",
+    "license": "rubik.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "sacramento": {
+    "package": "@fontsource/sacramento",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/sacramento@5.3.0/files/sacramento-latin-400-normal.woff2",
+    "sha256": "2fcd867d2812578d001b0eca921848e24de91d01986f26e038be374ec7c5cfd2",
+    "license": "sacramento.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "satisfy": {
+    "package": "@fontsource/satisfy",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/satisfy@5.3.0/files/satisfy-latin-400-normal.woff2",
+    "sha256": "efed75fb59ebfac3006c1a815cef791a300d1a4f7e75b0bf0654fa4f6884098e",
+    "license": "satisfy.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "schibsted-grotesk": {
+    "package": "@fontsource/schibsted-grotesk",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/schibsted-grotesk@5.3.0/files/schibsted-grotesk-latin-400-normal.woff2",
+    "sha256": "437cd97c802be9f10f60b4db8a723261e5c35dfe1529de0562981871028bd670",
+    "license": "schibsted-grotesk.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "shadows-into-light": {
+    "package": "@fontsource/shadows-into-light",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/shadows-into-light@5.3.0/files/shadows-into-light-latin-400-normal.woff2",
+    "sha256": "2498c027559c4ae9a920e18e30031193148983e7ea195416d62c5d0ea2eaa3ac",
+    "license": "shadows-into-light.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "signika": {
+    "package": "@fontsource/signika",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/signika@5.3.0/files/signika-latin-400-normal.woff2",
+    "sha256": "9c30f1c5690904243f9b247a26564b7eec660c270d63a4faa5a850b40ed610dd",
+    "license": "signika.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "silkscreen": {
+    "package": "@fontsource/silkscreen",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/silkscreen@5.3.0/files/silkscreen-latin-400-normal.woff2",
+    "sha256": "e6c72ea4702249202bcdd79d3343057e4e25ef1f04e3fcffd8602ab53b40b4cc",
+    "license": "silkscreen.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "sora": {
+    "package": "@fontsource/sora",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/sora@5.3.0/files/sora-latin-400-normal.woff2",
+    "sha256": "98141d7eaa6e9ee35e0827d279018cd33c3e59c6650541ec7de1c692efd93942",
+    "license": "sora.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "source-code-pro": {
+    "package": "@fontsource/source-code-pro",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/source-code-pro@5.3.0/files/source-code-pro-latin-400-normal.woff2",
+    "sha256": "75aa8cacfd459d58d7c093f3ff0ab8745cc878dfc93c5d4cda052791aeace878",
+    "license": "source-code-pro.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "source-sans-3": {
+    "package": "@fontsource/source-sans-3",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.3.0/files/source-sans-3-latin-400-normal.woff2",
+    "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b",
+    "license": "source-sans-3.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "source-serif-4": {
+    "package": "@fontsource/source-serif-4",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/source-serif-4@5.3.0/files/source-serif-4-latin-400-normal.woff2",
+    "sha256": "02194deb92d3975dd30e11a3824a1f1db32b48c93654e60560cb81ce8e7b5f95",
+    "license": "source-serif-4.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "space-grotesk": {
+    "package": "@fontsource/space-grotesk",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.3.0/files/space-grotesk-latin-400-normal.woff2",
+    "sha256": "65fd17fcbd2e2f522940b5f67ead3d23329e02891aa5495e74d11a499c0b0673",
+    "license": "space-grotesk.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "space-mono": {
+    "package": "@fontsource/space-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/space-mono@5.3.0/files/space-mono-latin-400-normal.woff2",
+    "sha256": "fb4a81a2d0a893e5c38c394a7e716a1cef0b24610a0af49c96f6d529bd66bf2b",
+    "license": "space-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "spectral": {
+    "package": "@fontsource/spectral",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/spectral@5.3.0/files/spectral-latin-400-normal.woff2",
+    "sha256": "cf8daee3b83c1e662196c6e34e444bc41344d54bfeb4fb5351e197de6ce94539",
+    "license": "spectral.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "syne": {
+    "package": "@fontsource/syne",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/syne@5.3.0/files/syne-latin-400-normal.woff2",
+    "sha256": "98ffc84a339a19a2b3af38d8ead818823eed865bdc419693c77c9929494acca2",
+    "license": "syne.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "titillium-web": {
+    "package": "@fontsource/titillium-web",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/titillium-web@5.3.0/files/titillium-web-latin-400-normal.woff2",
+    "sha256": "861b80b49d2a634d8746e2e45c672309d9ba69a2fdd95da2af034d7a1d09b3f9",
+    "license": "titillium-web.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "ubuntu": {
+    "package": "@fontsource/ubuntu",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/ubuntu@5.3.0/files/ubuntu-latin-400-normal.woff2",
+    "sha256": "dabae363ac0ae6c3b2a137a32f7132b42520a8af252f87aa6c2198f2a79cf91c",
+    "license": "ubuntu.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "ubuntu-mono": {
+    "package": "@fontsource/ubuntu-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/ubuntu-mono@5.3.0/files/ubuntu-mono-latin-400-normal.woff2",
+    "sha256": "afc6d2fb4f49b53ee31b13c23607739d5f2a42dba2f9f72f70144bd3b5b1a8e6",
+    "license": "ubuntu-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "unbounded": {
+    "package": "@fontsource/unbounded",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/unbounded@5.3.0/files/unbounded-latin-400-normal.woff2",
+    "sha256": "b0a91553c77f72f04eb4e8756003d926a0414c1710236caeb42fa4854bf6217e",
+    "license": "unbounded.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "urbanist": {
+    "package": "@fontsource/urbanist",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/urbanist@5.3.0/files/urbanist-latin-400-normal.woff2",
+    "sha256": "526bab743f8aeba2df182767150d7a354bf57b885f6ff2eab184cd27264b90aa",
+    "license": "urbanist.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "varela-round": {
+    "package": "@fontsource/varela-round",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/varela-round@5.3.0/files/varela-round-latin-400-normal.woff2",
+    "sha256": "03871f86c86fc776f89d0cb947502f3957181b63327fecaec724bc39d082319f",
+    "license": "varela-round.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "vazirmatn": {
+    "package": "@fontsource/vazirmatn",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/files/vazirmatn-latin-400-normal.woff2",
+    "sha256": "a650d62e37f036d53367b383e7c723c2efd426baf74ee8ccb95b634974955f49",
+    "license": "vazirmatn.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "victor-mono": {
+    "package": "@fontsource/victor-mono",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/victor-mono@5.3.0/files/victor-mono-latin-400-normal.woff2",
+    "sha256": "1c96d4706ad792e7740ba352e709380a7328e1d5b853d4d909b771c04be1a94a",
+    "license": "victor-mono.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "vollkorn": {
+    "package": "@fontsource/vollkorn",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/vollkorn@5.3.0/files/vollkorn-latin-400-normal.woff2",
+    "sha256": "dce19b6da3afe25af6cee9ec697877f92d95b6ed2617da67a5e7d5b8d7a857c9",
+    "license": "vollkorn.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "vt323": {
+    "package": "@fontsource/vt323",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/vt323@5.3.0/files/vt323-latin-400-normal.woff2",
+    "sha256": "8ddbebcc1048154132e1d78eb9b1f7850bca1b7d857035ccf1cb4318ebc615b6",
+    "license": "vt323.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "work-sans": {
+    "package": "@fontsource/work-sans",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/work-sans@5.3.0/files/work-sans-latin-400-normal.woff2",
+    "sha256": "418b06936717d2e9b6c7a1fb61acb7e2f40030be4b230452f96505230e7b6b41",
+    "license": "work-sans.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "yantramanav": {
+    "package": "@fontsource/yantramanav",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/yantramanav@5.3.0/files/yantramanav-latin-400-normal.woff2",
+    "sha256": "a6feaec1d2336b09ed856ca514fe88a68f59903a7d7fabdd137509fdb19848ea",
+    "license": "yantramanav.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "young-serif": {
+    "package": "@fontsource/young-serif",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/young-serif@5.3.0/files/young-serif-latin-400-normal.woff2",
+    "sha256": "6ba68b9927ad2a640d32cbea050ffc2b5d0ae6cbaa785afe470da9d6bf0ef39f",
+    "license": "young-serif.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  },
+  "zilla-slab": {
+    "package": "@fontsource/zilla-slab",
+    "version": "5.3.0",
+    "source": "https://cdn.jsdelivr.net/npm/@fontsource/zilla-slab@5.3.0/files/zilla-slab-latin-400-normal.woff2",
+    "sha256": "ab2607313bc04e82a53aca235853a0b83463e99b3ae88b17cc963e371f8fe91c",
+    "license": "zilla-slab.LICENSE.txt",
+    "subset": "latin",
+    "weight": 400,
+    "style": "normal"
+  }
+}

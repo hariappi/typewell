@@ -1,0 +1,30 @@
+CHANGES IN 1.2.3
+Fixes code preservation in GitHub file views. GitHub uses divs/table cells for source lines and line numbers; the engine now recognizes these alongside standard code tags. Code keeps its original typography while surrounding text uses the selected font. No new permissions or data collection.
+
+SOURCE / BUILD
+The XPI contains readable JavaScript, HTML and CSS. No bundler, transpilation, minification, obfuscation, eval or remote code. No runtime dependencies.
+
+The source ZIP includes build scripts, tests, lockfile, documentation and the font-asset generator. Release environment: macOS 27.2 / Node.js 22.22.3. From the extracted source:
+
+npm ci --ignore-scripts
+npm test
+NO_UPDATE_NOTIFIER=1 npm run lint
+npm run build
+
+The build verifies font hashes/licenses, copies license/privacy text and packages extension/ with Mozilla web-ext. Application code is not transformed. Compare extracted contents, since ZIP metadata can differ. Fonts are included; do not run npm run fonts to reproduce this release. Provenance, hashes and licenses are in extension/fonts/. Original code is MIT licensed.
+
+PERMISSIONS / PRIVACY
+HTTP/HTTPS access applies saved fonts to pages, dynamic text and permitted frames. scripting manages user-origin CSS; activeTab supports the popup; storage saves hostname rules, defaults, exclusions, favorites and interface theme locally.
+
+Page text is examined for styling but never saved or transmitted. No analytics, ads or remote runtime requests. Fonts load from the package. Page CSP is unchanged. The manifest declares data_collection_permissions.required ["none"] and incognito "not_allowed". Exports are user-initiated local files. Imports are validated and require confirmation.
+
+TESTING
+1. Open a GitHub source file. Choose Lora, enable "Keep code in its original font", then apply. Source lines and line numbers should remain monospace while surrounding text changes.
+2. Adjust size and spacing: protected code keeps its original typography. Disable code preservation to deliberately style code; re-enable it to restore the original.
+3. Close an unsaved preview: the saved/original font returns. Apply and reload: the exact-host rule persists. Site rules override global defaults.
+4. Check pause/resume, themes, rule removal and backup/import in Preferences.
+
+Validation: 15 model/font tests, 35 fixture checks in light and dark Firefox 158.0, and an additional public GitHub file check passed. Mozilla lint: 0 errors/warnings/notices. Tests used disposable profiles. The exact file in the user screenshot and minimum Firefox 142 were not separately tested.
+
+LIMITS
+Desktop only. Private windows, protected browser pages, canvas text and closed shadow roots are unsupported. Bundled fonts are Latin/regular/upright; other scripts fall back and bold/italic may be synthesized. Unusual layouts may need site exclusion.

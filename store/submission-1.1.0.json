@@ -1,0 +1,32 @@
+{
+  "updatedAt": "2026-09-18",
+  "name": "Typewell — Font Changer",
+  "version": "1.1.0",
+  "slug": "typewell-font-changer",
+  "developer": "dev_ffox",
+  "channel": "listed",
+  "status": "approved",
+  "statusLabel": "Approved",
+  "submissionConfirmed": true,
+  "approvalConfirmed": true,
+  "publicationConfirmed": true,
+  "submittedDate": "2026-09-18",
+  "approvedDate": "2026-09-18",
+  "versionId": 6496413,
+  "fileId": 5040570,
+  "addOnId": "typewell@font-changer.local",
+  "developerDashboardUrl": "https://addons.mozilla.org/en-US/developers/addon/typewell-font-changer/versions/6496413",
+  "listingUrl": "https://addons.mozilla.org/en-US/firefox/addon/typewell-font-changer/",
+  "listingVisibilityObserved": "Visible to everyone on addons.mozilla.org; listed version 1.1.0.",
+  "localUploadPath": "dist/typewell-1.1.0.xpi",
+  "localUploadSha256": "a275feaec1985fdb3aeed9960b971e67c33f37d88146f467144ea16f91e8b1b6",
+  "sourceArchivePath": "dist/typewell-1.1.0-source.zip",
+  "sourceArchiveSha256": "60ea03e49ceb99887a2d3c0fe23e7b26c43eb8f4f2b93e8afe04b43e3474298e",
+  "sourceUploaded": true,
+  "amoValidation": {
+    "errors": 0,
+    "warnings": 0,
+    "fileId": 5040570
+  },
+  "note": "AMO displayed Version Submitted, then the version page showed file 5040570 as Approved and 1.1.0 as the listed version. Release notes, reviewer notes, and the source archive were supplied."
+}

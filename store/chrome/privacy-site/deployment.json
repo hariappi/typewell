@@ -1,0 +1,25 @@
+{
+  "provider": "Cloudflare Pages",
+  "projectName": "typewell-privacy",
+  "projectId": "a72cabcf-5737-4a0b-bdaa-243db03f1c4f",
+  "url": "https://typewell-privacy.pages.dev/",
+  "deploymentId": "8a633499-0521-447f-a945-a88e5260281f",
+  "deploymentUrl": "https://8a633499.typewell-privacy.pages.dev",
+  "productionBranch": "main",
+  "deployedAt": "2026-10-19T16:01:17.205023Z",
+  "deploymentStatus": "success",
+  "mode": "Pages advanced-mode function serving prepared HTML",
+  "htmlBytes": 8376,
+  "htmlSha256": "eb64901bb186134369b78ad8160b66afdc3245bce9e30906f1922973b5d73c3b",
+  "workerSha256": "9176fef094a6d9ac6f289d19d4d9b5ad081c6a697cd431f4e3fb31ade1a4aef7",
+  "localResponseMatchesHtml": true,
+  "publicAccessibility": {
+    "status": "verified in Brave",
+    "verifiedOn": "2026-10-19",
+    "signInRequired": false,
+    "pageTitle": "Privacy policy — Typewell",
+    "currentPolicyAndBrowserScopeVisible": true,
+    "contactEmailVisible": "typewell.support18@proton.me",
+    "initialAutomatedCheck": "Python HTTP check returned 403, Cloudflare error 1010; normal Brave browser verification succeeded"
+  }
+}

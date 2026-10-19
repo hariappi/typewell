@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Typewell — Font Changer",
+  "version": "1.2.3",
+  "incognito": "not_allowed",
+  "description": "Make the web your type. Preview offline fonts, fine-tune readability, and remember a different look for every website.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "typewell@font-changer.local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["shared/compat.js", "shared/catalog.js", "shared/model.js", "background.js"]
+  },
+  "action": {
+    "default_title": "Typewell — Font Changer",
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/typewell.svg"
+  },
+  "icons": { "48": "icons/typewell.svg", "96": "icons/typewell.svg" },
+  "options_ui": { "page": "options/options.html", "open_in_tab": true },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["shared/compat.js", "shared/catalog.js", "shared/model.js", "content/engine.js", "content/content.js"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "match_about_blank": true
+  }],
+  "web_accessible_resources": [{
+    "resources": ["fonts/*.woff2"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Open Typewell"
+    }
+  }
+}
