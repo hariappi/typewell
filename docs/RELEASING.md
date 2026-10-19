@@ -15,7 +15,7 @@ The jobs run independently after validation. One store can accept an update whil
 
 ## Configure the accounts once
 
-These are setup instructions, not confirmation that the account configuration is complete. Before the first automated release, verify the values in GitHub and the linked service account in the Chrome dashboard.
+As of October 19, 2026, the Google project, service account, and restricted GitHub identity provider are created. The provider is active, its two GitHub variables are saved, and Google's billing API confirms `billingEnabled: false` with no billing account attached. Chrome's linked service account and listing IDs, plus Mozilla's two GitHub secrets, still require account setup. No store upload has been performed by this workflow.
 
 ### Firefox secrets
 
@@ -30,7 +30,7 @@ Enter secrets directly in GitHub. Never paste them into chat, commit them, or pl
 
 ### Chrome identity and variables
 
-Use a dedicated Google Cloud project for this publishing identity. The planned project ID is `typewell-publishing-1425913806`; verify its creation before using it. The intended setup leaves billing unlinked and creates no compute resources. It needs a service account, a Workload Identity Federation pool/provider, and the Chrome Web Store, IAM, IAM Credentials, and Security Token Service APIs.
+The dedicated Google Cloud project is `typewell-publishing-1425913806` (number `645044318350`). It has no linked billing account or compute resources. Its Chrome Web Store, IAM, IAM Credentials, and Security Token Service APIs are enabled. The service account is `typewell-publisher@typewell-publishing-1425913806.iam.gserviceaccount.com`; its provider is `projects/645044318350/locations/global/workloadIdentityPools/github/providers/typewell-release`.
 
 Workload Identity Federation lets the release job exchange its GitHub identity for a short-lived token. No Google service-account JSON key is created or saved in GitHub. Follow Google's [deployment pipeline federation guide](https://docs.cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines) when creating or repairing this setup.
 
